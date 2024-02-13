@@ -15,7 +15,7 @@ class BasicContactView(View):
     def get(self, request, *args, **kwargs):
         context = {
             "form": self.form_class(),
-            "title": "Contact Us | Huntment"
+            "title": "Contact Us | B2B"
         }
         return render(request, self.template_name, context)
 
@@ -76,7 +76,7 @@ class BasicContactView(View):
             context = {
                 "message": err_msg,
                 "form": self.form_class(request.POST.copy()),
-                "title": "Contact Us | Huntment"
+                "title": "Contact Us | B2B"
             }
             return render(request, self.template_name, context)
 

@@ -41,7 +41,7 @@ class LoginView(View):
         context = {
             "form": self.form_class(),
             "next_url": next_url,
-            "title": "Login | Huntment"
+            "title": "Login | B2B"
         }
         return render(request, self.template_name, context)
 
@@ -95,7 +95,7 @@ class UserRegistration(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            "title": "Sign up | Huntment",
+            "title": "Sign up | B2B",
             "form": self.form_class(),
         }
         return render(request, self.template_name, context)
@@ -152,7 +152,7 @@ class UserRegistration(View):
 
 def activateEmail(request,user,to_email):
     # messages.success(request,f'Dear <b>{user}</b>, please check mail {to_email} and activate your account')
-    mail_subject = 'Activate your huntment user account.'
+    mail_subject = 'Activate your B2B user account.'
     message = render_to_string('accounts/email/emailsend.html', {
         'user': user.first_name,
         'domain': get_current_site(request).domain,
@@ -208,7 +208,7 @@ class BusinessProfile(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            "title": "Business Profile | Huntment",
+            "title": "Business Profile | B2B",
             # "form": self.form_class(),
         }
         return render(request, self.template_name, context)
@@ -220,7 +220,7 @@ class FranchiseProfile(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            "title": "Franchise Profile | Huntment",
+            "title": "Franchise Profile | B2B",
             # "form": self.form_class(),
         }
         return render(request, self.template_name, context)   
@@ -232,7 +232,7 @@ class InvestorBuyerProfile(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            "title": "Investor & Buyer Profile | Huntment",
+            "title": "Investor & Buyer Profile | B2B",
             # "form": self.form_class(),
         }
         return render(request, self.template_name, context)  
@@ -291,7 +291,7 @@ class HeaderProfile(View):
         print(userid)
 
         context = {
-            "title": "Investor & Buyer Profile | Huntment",
+            "title": "Investor & Buyer Profile | B2B",
         }
         return render(request, self.template_name, context) 
 

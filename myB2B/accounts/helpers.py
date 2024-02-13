@@ -6,7 +6,7 @@ from django.contrib.sites.shortcuts import get_current_site
 def send_forget_password_email(request,toemail,token, username):
 	
 
-    mail_subject = 'Change Password for huntment user account.'
+    mail_subject = 'Change Password for B2B user account.'
     message = render_to_string('accounts/email/emailresend.html', {
         'domain': get_current_site(request).domain,
         'token': token,
