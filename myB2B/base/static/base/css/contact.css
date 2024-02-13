@@ -1,0 +1,53 @@
+/** css for contact_us page **/
+.huntment_border{
+    border-bottom:1px solid #1999ce !important;
+  }
+  .text-area_border{
+    border:1px solid #1999ce !important;
+  }
+  .form_container{
+    background:url(images/home_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .form-control:focus, .form-control:active{
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--main-color) !important; 
+  }
+  .contact_form_logo {
+    height: 6rem;
+    width: 6rem;
+    margin-top: -3rem;
+    z-index: 1;
+    border:  2px solid #1999ce;
+  }
+  .border_huntment{
+    border-color: #1999ce !important;
+}
+.border_huntment input{
+    border-color: #1999ce !important;
+}
+/* custom css here */
+:root{
+    --main-color: #1999ce;
+    font-family: 'Poppins', sans !important;
+    box-sizing: border-box !important;
+}
+.official_bg{
+    background-color: var(--main-color) !important;
+}
+.btn_bg{
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    height: 2.5rem;
+    
+}
+.link_color{
+    color: var(--main-color) !important;
+}
+  
+  

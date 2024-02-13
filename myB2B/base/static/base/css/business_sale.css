@@ -1,0 +1,57 @@
+.small_text{
+    font-size: 10px !important;
+}
+.medium_text{
+    font-size: 12px !important;
+}
+.lg_text{
+    font-size: 15px;
+}
+.official_bg{
+    background: #1999ce !important;
+}
+.link_color{
+    color: #1999ce !important;
+}
+.form-control:active, .form-control:focus{
+    box-shadow: none !important;
+}
+.select2-selection--single{
+    min-height: 2.2rem;
+}
+/* .side_cog_icon svg{
+    width: 3rem;
+    height: 3rem;
+} */
+.card_inner svg{
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+}
+.social_link svg{
+    fill: #1999ce;
+}
+.unverified_link{
+    fill: gray !important;
+    color: gray !important;
+}
+.social_link a{
+    font-size: 11px;
+}
+.border_huntment{
+    border: 1px solid #1999ce !important;
+}
+.carousel-item img{
+    width: 100% !important;
+    height: 150px !important;
+}
+.card:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+
+
+
+

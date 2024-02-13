@@ -1,0 +1,31 @@
+/** css for contact_us page **/
+.container-1{
+    width: 38% !important;
+    height: 22rem;
+  } 
+  #nameError, #emailError, #countryError, #msgError, #phoneError{
+    color: brown;
+    font-size: 10px;
+  }
+  .row{
+    padding: 10px;
+  }
+  @media screen and (max-width: 768px){
+    .container-1{
+      width: 96% !important;
+      margin:0px auto;
+      height: 100px;
+    }
+  }
+  /* important for responsive */
+  @media screen and (max-width: 500px){
+    .row{
+      flex-direction: column;
+      margin: 0px;
+      padding: 0px;
+    }
+    .col{
+      margin-bottom:  20px;
+      padding-bottom: 20px;
+    }
+  }

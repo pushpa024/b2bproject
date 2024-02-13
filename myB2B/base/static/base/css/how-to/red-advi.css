@@ -1,0 +1,199 @@
+/* main{
+    background-color: #1999ce;
+    color: white;
+    border-radius: 5px;
+} */
+.box{
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 2px 2px #ddd;
+}
+.phone-icon{
+    width: 35px;
+    margin-left: 40%;
+    margin-top: 5%;
+  
+}
+.custom-container{
+    max-width: 1770px;
+    width: 90%;
+}
+.card{
+    height: 230px;
+}
+.plan-box .comman-btn{
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+
+ .comman-btn a {    
+    background-color: #1999ce;
+}
+.plan-box{
+    box-shadow: 2px 2px 2px 2px #ddd;
+    min-height: 670px;
+}
+  .plan-box .comman-btn{
+      bottom: 50px;
+      left: 0;
+      right: 0;
+  }
+  .plan-list li::before {
+      content: '\2713';
+      color: #1999ce;
+      margin-right: 10px;
+      text-align: left;
+      margin-left: 0px;
+      margin-top: 2%;
+  }
+  button{
+    margin-left: 30%;
+    background-color: #1999ce;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+    border: 0px solid #1999ce;
+}
+  #col-plan{    
+    width: 20%;
+    max-width: 20%;
+    flex: 0 0 20%;
+    flex: auto !important;
+}
+  .plan-list li .tooltip {
+      visibility: hidden;
+      transition: 0.2s;
+      width: 190px;
+      left: 0;
+      right: 0;
+      margin-top: -80px;
+  }
+  .plan-list li:hover .tooltip {
+      visibility: visible;
+  }
+  .plan-list li .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 45%;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+  }
+  .plan-box.active-plan{
+    transform: scale(1.05) !important;
+    border-top: 3px solid #1999ce !important;
+}
+
+
+
+/*  */
+@media (max-width: 996px) and (min-width: 768px){
+    .card{
+        height: 360px;
+    }
+}
+@media (max-width: 1600px){
+    .plan-box{
+        margin-bottom: 20px;
+        min-height: 30rem;
+        padding: 20px 10px 70px 10px;
+    }
+    .plan-box .comman-btn{
+        bottom: 20px;
+    }
+    .plan-box .comman-btn a{
+        padding: 10px;
+        font-size: 14px;
+    }
+    .plan-list li, .plan-disp p{
+        font-size: 12px;
+    }
+}
+@media (max-width: 1199px){
+  #col-plan{
+        width: 100%;
+        max-width: 33.33%;
+        padding-bottom: 15px;
+    }
+    .comman-btn a {
+        font-size: 14px;
+        padding: 13px;
+    }
+}
+@media (max-width: 991px){
+    .plan-list li .tooltip {
+        width: 140px;
+    }
+}
+@media (max-width: 768px) { 
+  #col-plan {
+       max-width: 100%;
+       margin: 0px 5px;
+    }
+    .custom-container {
+        padding: 20px 0px;
+    }
+   
+}
+@media (max-width:678px){
+    .row{
+        display: flex !important;
+        justify-content: center !important;
+        align-items:center !important;
+        
+    }
+}
+@media (max-width: 400px){
+    .card{
+        height: 330px;
+    }
+}
+/*  */
+/*  */
+
+/* @media (max-width: 768px) { 
+    
+      .custom-container {
+          padding: 20px 0px;
+      }
+      
+  }
+  @media (max-width: 587px){
+   
+    .comman-btn{
+       margin-bottom: -9px !important;
+    }
+}
+@media (max-width: 1199px){
+   
+      .comman-btn a {
+          font-size: 14px;
+          padding: 13px;
+      }
+  }
+  @media (max-width: 1600px){
+    
+   
+    .plan-box .comman-btn{
+        bottom: 20px;
+    }
+    .plan-box .comman-btn a{
+        padding: 10px;
+        font-size: 14px;
+    }
+   
+} */
+
+/* buttons */
+#planset-button-BUY_SIDE_PLANS:hover, #planset-button-SELL_SIDE_PLANS:hover{
+    opacity: 1 !important;
+}
+
+.active{
+    background-color: #1999ce;
+    color: white !important;
+}
+.elements_remove{
+    display: none !important;
+}

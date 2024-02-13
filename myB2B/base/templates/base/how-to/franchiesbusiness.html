@@ -1,0 +1,219 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+{% block extra_head_content %}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href='{% static "base/css/how-to/franchiesbusiness.css" %}'>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+{% endblock %}
+   <!--  <title>findinvestor</title>
+  </head>
+  <body> -->
+
+    <div class="custom-container my-0 mx-auto py-5 px-2">
+      <div class="comman-btn d-flex d-inline-block">
+          <a href="#" class="fs-5 px-2 py-3 text-white rounded-3 text-decoration-none pe-auto">How To Franchise Your Business</a>
+      </div>
+      <div class="mt-3 border p-2 shadow">
+         <p>Finding good and reliable franchise partners to grow your business can be a painful, yet important task for your business. HUNTMENT makes this easy by bringing business enthusiasts and investors from different parts of the world under one roof.</p>
+         
+      </div>
+  </div>
+    <!-- cards -->
+    <div class="row g-1" id="cards-row">
+      <div class="col col-card">
+      <div class="card py-4">
+          <div class="d-flex justify-content-center">
+              <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"> <path d="M320 0H64C37.5 0 16 21.5 16 48v416C16 490.5 37.5 512 64 512h256c26.5 0 48-21.5 48-48v-416C368 21.5 346.5 0 320 0zM240 447.1C240 456.8 232.8 464 224 464H159.1C151.2 464 144 456.8 144 448S151.2 432 160 432h64C232.8 432 240 439.2 240 447.1zM304 384h-224V64h224V384z"/></svg>
+          </div>
+          <div class="card-body">
+          
+          <h6 class="card-title text-center">Lead Generation</h6>
+          <p class="card=text">Send announcements to thousands of qualified investors/buyers in a matter of seconds</p>
+          </div>
+      </div>
+      </div>
+      <div class="col col-card">
+      <div class="card py-4">
+          <div class="d-flex justify-content-center " id="icons">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M274.7 304H173.3C77.61 304 0 381.6 0 477.3C0 496.5 15.52 512 34.66 512H413.3C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM632.3 134.4c-9.703-9-24.91-8.453-33.92 1.266l-87.05 93.75l-38.39-38.39c-9.375-9.375-24.56-9.375-33.94 0s-9.375 24.56 0 33.94l56 56C499.5 285.5 505.6 288 512 288h.4375c6.531-.125 12.72-2.891 17.16-7.672l104-112C642.6 158.6 642 143.4 632.3 134.4z"/></svg>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title text-center">Trusted Members</h6>
+              <p class="card=text">We care about quality as much as you do. We are filtering out the not so serious crowd.</p>
+          </div>
+      </div>
+      </div>
+      <div class="col col-card">
+      <div class="card py-4">
+          <div class="d-flex justify-content-center" id="icons">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M0 383.9l64 .0404c17.75 0 32-14.29 32-32.03V128.3L0 128.3V383.9zM48 320.1c8.75 0 16 7.118 16 15.99c0 8.742-7.25 15.99-16 15.99S32 344.8 32 336.1C32 327.2 39.25 320.1 48 320.1zM348.8 64c-7.941 0-15.66 2.969-21.52 8.328L228.9 162.3C228.8 162.5 228.8 162.7 228.6 162.7C212 178.3 212.3 203.2 226.5 218.7c12.75 13.1 39.38 17.62 56.13 2.75C282.8 221.3 282.9 221.3 283 221.2l79.88-73.1c6.5-5.871 16.75-5.496 22.62 1c6 6.496 5.5 16.62-1 22.62l-26.12 23.87L504 313.7c2.875 2.496 5.5 4.996 7.875 7.742V127.1c-40.98-40.96-96.48-63.88-154.4-63.88L348.8 64zM334.6 217.4l-30 27.49c-29.75 27.11-75.25 24.49-101.8-4.371C176 211.2 178.1 165.7 207.3 138.9L289.1 64H282.5C224.7 64 169.1 87.08 128.2 127.9L128 351.8l18.25 .0369l90.5 81.82c27.5 22.37 67.75 18.12 90-9.246l18.12 15.24c15.88 12.1 39.38 10.5 52.38-5.371l31.38-38.6l5.374 4.498c13.75 11 33.88 9.002 45-4.748l9.538-11.78c11.12-13.75 9.036-33.78-4.694-44.93L334.6 217.4zM544 128.4v223.6c0 17.62 14.25 32.05 31.1 32.05L640 384V128.1L544 128.4zM592 352c-8.75 0-16-7.246-16-15.99c0-8.875 7.25-15.99 16-15.99S608 327.2 608 336.1C608 344.8 600.8 352 592 352z"/></svg>
+          </div>
+          <div class="card-body">
+              
+                  <h6 class="card-title  text-center">Grow your customer base</h6>
+                  <p class="card=text">Connect with entrepreneurs who can take your brand to the next level</p>
+          
+          </div>
+      </div>
+      </div>
+      <div class="col col-card">
+      <div class="card py-4">
+          <div class="d-flex justify-content-center">
+              <svg class="global-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title  text-center">Global Network</h6>
+              <p class="card=text">We bring investors and entrepreneurs across the globe to a single platform - HUNTMENT</p>
+          </div>
+      </div>
+      </div>
+  </div>
+  
+  <!-- cards -->
+   
+  
+      <div class="custom-container my-0 mx-auto py-5 px-2">
+          <div class="text-center comman-title">
+              <h3 class="my-4">Select Service Level</h3>
+              <p class="pb-5">Based on how prepared you are and level of assistance required, select one of the plans below</p>
+          </div>
+          <div class="custom-row d-flex flex-wrap mt-90">
+              <div class="col flex-shrink-0 px-3" id="col-plan">
+                  <div class="plan-box position-relative h-100 bg-secondary bg-opacity-10 border border-2 p-2">
+                      <div class="plan-title mb-2 text-center">
+                          <h6 class="fw-bold fs-5 pt-2">KICK STARTER</h6>
+                          <h6 class="plan py-2">FREE</h6>
+                      </div>
+                      <div class="plan-disp">
+                          <p>Not in the pursuit for immediate PROPOSALS, But open to potential OFFERS.</p>
+                          <ul class="plan-list mt-2 px-0 list-unstyled">
+                              <li>Basic Profile <span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span></li>
+                              <li>One Proposal <span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span></li>
+                          </ul>
+                      </div>
+                      <div class="comman-btn position-absolute d-inline-block text-center">
+                          <a href="" class="fs-6 py-2 px-2 text-white rounded-3 text-decoration-none pe-auto">Select Plan</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col flex-shrink-0 px-3" id="col-plan">
+                  <div class="plan-box position-relative h-100 bg-secondary bg-opacity-10 border border-2 p-2">
+                      <div class="plan-title mb-2 text-center">
+                          <h6 class="fw-bold fs-5 pt-2">PRIME BUSINESS</h6>
+                          <h6 class="plan py-2">AED 149</h6>
+                      </div>
+                      <div class="plan-disp">
+                          <p>Getting down to BUSINESS, Inviting potential BUYERS.</p>
+                          <ul class="plan-list mt-2 px-0 list-unstyled">
+                              <li>Prime Business Profile <span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Profile marked as 'Premium Plan' and gets higher visibility from Buyers on a confidential basis</span></li>
+                              <li>25 Business Proposals <span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span></li>
+                              <li>Profile Activation <span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span></li>
+                              <li>Validity For 1 Year <span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span></li>
+                          </ul>
+                      </div>
+                      <div class="comman-btn position-absolute d-inline-block text-center">
+                          <a href="" class="fs-6 py-2 px-2 text-white rounded-3 text-decoration-none pe-auto">Select Plan</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col flex-shrink-0 px-3" id="col-plan">
+                  <div class="plan-box active-plan position-relative h-100 bg-white border border-2 p-2" >
+                      <div class="plan-title mb-2 text-center">
+                          <h6>Recommended</h6>
+                          <h6 class="fw-bold fs-5">ELITE BUSINESS</h6>
+                          <h6 class="plan py-2">AED 249</h6>
+                      </div>
+                      <div class="plan-disp">
+                          <p>Businesses wanting to connect with multiple BUYERS and derive OFFERS to their listing.</p>
+                          <ul class="plan-list mt-2 px-0 list-unstyled">
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Elite Business Profile</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>50 Business Proposals</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Profile Activation</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Quick Email Support</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Validity For 1 Year</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Promotion by RIAMIR</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Validity For 1 Year</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Top 25 Buyers/investors</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Non-Disclosure Agreement</li>
+                          </ul>
+                      </div>
+                      <div class="comman-btn position-absolute d-inline-block text-center" style="margin-bottom: -12px;">
+                          <a href="" class="fs-6 py-2 px-2 text-white rounded-3 text-decoration-none pe-auto">Select Plan</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col flex-shrink-0 px-3" id="col-plan">
+                      <div class="plan-box position-relative h-100 bg-secondary bg-opacity-10 border border-2 p-2">
+                      <div class="plan-title mb-2 text-center">
+                          <h6 class="fw-bold fs-5 pt-2">JUMP START BUSINESS</h6>
+                          <h6 class="plan py-2">AED 625</h6>
+                      </div>
+                      <div class="plan-disp">
+                          <p>Multiple BUSINESS opportunities on behalf of your CLIENTS.</p>
+                          <ul class="plan-list mt-2 px-0 list-unstyled">
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Jump-Start Profile</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>100 Business Proposals</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Profile Activation</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Email and Phone Support</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Validity For 1 Year</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Promotion By RIAMIR</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Top 25 Buyers/investors</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Non-Disclosure Agreement</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>10 Business Plans Bundle</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>10 Credits</li><br><br><br><br>
+                          </ul>   
+                      </div>
+                      <div class="comman-btn position-absolute d-inline-block text-center">
+                          <a href="" class="fs-6 py-2 px-2 text-white rounded-3 text-decoration-none pe-auto">Select Plan</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col flex-shrink-0 px-3" id="col-plan">
+                  <div class="plan-box position-relative h-100 bg-secondary bg-opacity-10 border border-2 p-2">
+                      <div class="plan-title mb-2 text-center">
+                          <h6 class="fw-bold fs-5 pt-2">DELUXE BUSINESS</h6>
+                          <h6 class="plan py-2">AED 2299</h6>
+                      </div>
+                      <div class="plan-disp">
+                          <p>Businesses requiring TRANSACTION support with Business PLAN and EVALUATION</p>
+                          <ul class="plan-list mt-2 px-0 list-unstyled">
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Deluxe Business Profile</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>UNLIMITED Proposals</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>24 Hours Profile Activation</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Email and Phone Activation</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Validity on Deal Closure</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Top 100 Buyers/investors</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Non-Disclosure Agreement</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>5000 Exclusive Emails</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Account Administrator</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Information Memorandum</li>
+                              <li><span class="tooltip position-absolute bg-light p-1 border rounded shadow opacity-100">Basic Profile of your business visable to buyers</span>Financial Projection</li> <br><br><br>        
+                          </ul>
+                      </div>
+                      <div class="comman-btn position-absolute d-inline-block text-center">
+                          <a href="" class="fs-6 py-2 px-2 text-white rounded-3 text-decoration-none pe-auto">Select Plan</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <div class="custom-container my-0 mx-auto py-5 px-2">
+      <div class="w-100 my-0 mx-auto py-2 text-center">                    
+          <p class="plan-disp" style="font-size: 12px;">Note: All prices are inclusive of taxes. All plans have access to Business Dashboard, Interested Buyer/Investor Contact details, and Online Valuation Tool. Paid plans are valid till proposal credits are exhausted or for a period of 1 year or till deal closure, whichever is earlier. All plans have a 1% finder's fee post transaction closure for business owners. If you are an advisor looking to list multiple businesses <a href="#" class="pe-auto link-a">Click here</a>. *Fair Usage Policy Applicable.</p>
+      </div>
+  </div>
+  
+{% block extra_js %}
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+{% endblock %}
+{% endblock %}

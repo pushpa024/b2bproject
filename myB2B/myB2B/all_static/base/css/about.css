@@ -1,0 +1,13 @@
+.team_members_img{
+     width:100px;
+     height:100px;
+}
+.team_card{
+    border-radius: 2rem 2rem 0 0 !important;
+    box-shadow: 2px 2px 6px gray;
+    border-bottom: 2px solid var(--main-color) !important;
+}
+.designation{
+    font-size: 12px;
+    font-weight: 550;
+}

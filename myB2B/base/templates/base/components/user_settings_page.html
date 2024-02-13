@@ -1,0 +1,606 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!--user settings page content starts here -->
+{% block extra_head_content %} {% endblock %}
+  <!-- <title>Settings - HuntMent</title> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <!--Intell input links-->
+  <link rel="stylesheet" href="../business_register_module/intl-tel-input-master/build/css/intlTelInput.css">
+  <script src="../business_register_module/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <!-- Fontawesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <script src='{% static "base/js/user_settings.js" %}'></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Poiret+One&family=Poppins:wght@400;500&family=Roboto:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #show-final {
+      border-radius: 50%;
+    }
+
+    .uploaded_img {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    .link_color {
+      color: #1999ce;
+    }
+
+    .nav-pills .active {
+      background-color: #1999ce !important;
+    }
+
+    .nav-pills .active svg {
+      fill: white !important;
+    }
+
+    .bg_official {
+      background-color: #1999ce;
+    }
+
+    .js-example-basic-single {
+      width: 100%;
+      min-height: 2.5rem;
+      border-radius: 0.3rem;
+      border: 1px solid #1999ce !important;
+
+      background: transparent;
+      box-shadow: inset 1px 1px 1px rgb(187, 185, 185);
+
+
+    }
+
+    .select2-container--default {
+      width: 100% !important;
+    }
+
+    .select2-selection--single {
+      width: 100%;
+      min-height: 2.5rem;
+      border-color: transparent;
+      box-shadow: inset 1px 1px 1px rgb(187, 185, 185);
+      border: 1px solid #1999ce !important;
+    }
+  </style>
+ 
+<!-- </head>
+<body> -->
+  {% block content %}
+  <div class="bg-right">
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-sm-11 col-md-10 col-lg-10 mx-auto">
+          <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-decoration-none">Home</a></li>
+              <li class="breadcrumb-item"><a href="#" class="text-decoration-none">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page" class="text-decoration-none">Settings</li>
+            </ol>
+          </nav>
+          <div class="row pb-4">
+            <!-- left side div -->
+            <div class="col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-md-block">
+              <div class="card bg-common card-left">
+                <div class="card-body">
+                  <nav class="nav nav-pills d-md-block d-none" id="nav-tab" role="tablist">
+                    <a class="nav-link active my-2 link-dark" id="nav-profile-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                      aria-selected="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20"
+                        viewBox="0 0 640 512">
+                        <path
+                          d="M223.1 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 223.1 256zM274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512h286.4c-1.246-5.531-1.43-11.31-.2832-17.04l14.28-71.41c1.943-9.723 6.676-18.56 13.68-25.56l45.72-45.72C363.3 322.4 321.2 304 274.7 304zM371.4 420.6c-2.514 2.512-4.227 5.715-4.924 9.203l-14.28 71.41c-1.258 6.289 4.293 11.84 10.59 10.59l71.42-14.29c3.482-.6992 6.682-2.406 9.195-4.922l125.3-125.3l-72.01-72.01L371.4 420.6zM629.5 255.7l-21.1-21.11c-14.06-14.06-36.85-14.06-50.91 0l-38.13 38.14l72.01 72.01l38.13-38.13C643.5 292.5 643.5 269.7 629.5 255.7z" />
+                      </svg>
+                      Edit Profile
+                    </a>
+                    <a class="nav-link my-2 link-dark" id="nav-security-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-security" type="button" role="tab" aria-controls="nav-security"
+                      aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20"
+                        viewBox="0 0 640 512">
+                        <path
+                          d="M622.3 271.1l-115.1-45.01c-4.125-1.629-12.62-3.754-22.25 0L369.8 271.1C359 275.2 352 285.1 352 295.1c0 111.6 68.75 188.8 132.9 213.9c9.625 3.75 18 1.625 22.25 0C558.4 489.9 640 420.5 640 295.1C640 285.1 633 275.2 622.3 271.1zM496 462.4V273.2l95.5 37.38C585.9 397.8 530.6 446 496 462.4zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM320.6 310.3C305.9 306.3 290.6 304 274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512H413.3c3.143 0 5.967-1.004 8.861-1.789C369.7 469.8 324.1 400.3 320.6 310.3z" />
+                      </svg>
+                      Security 
+                    </a>
+                    <a class="nav-link my-2 link-dark" id="nav-notification-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-notification" type="button" role="tab" aria-controls="nav-notification"
+                      aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20"
+                        viewBox="0 0 448 512">
+                        <path
+                          d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" />
+                      </svg>
+                      Notifications
+                    </a>
+                    <a class="nav-link my-2 link-dark" id="nav-setting-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-setting" type="button" role="tab" aria-controls="nav-setting"
+                      aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20"
+                        viewBox="0 0 640 512">
+                        <path
+                          d="M425.1 482.6c-2.303-1.25-4.572-2.559-6.809-3.93l-7.818 4.493c-6.002 3.504-12.83 5.352-19.75 5.352c-10.71 0-21.13-4.492-28.97-12.75c-18.41-20.09-32.29-44.15-40.22-69.9c-5.352-18.06 2.343-36.87 17.83-45.24l8.018-4.669c-.0664-2.621-.0664-5.242 0-7.859l-7.655-4.461c-12.3-6.953-19.4-19.66-19.64-33.38C305.6 306.3 290.4 304 274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512H413.3c5.727 0 10.9-1.727 15.66-4.188c-2.271-4.984-3.86-10.3-3.86-16.06V482.6zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM610.5 373.3c2.625-14 2.625-28.5 0-42.5l25.75-15c3-1.625 4.375-5.125 3.375-8.5c-6.75-21.5-18.25-41.13-33.25-57.38c-2.25-2.5-6-3.125-9-1.375l-25.75 14.88c-10.88-9.25-23.38-16.5-36.88-21.25V212.3c0-3.375-2.5-6.375-5.75-7c-22.25-5-45-4.875-66.25 0c-3.25 .625-5.625 3.625-5.625 7v29.88c-13.5 4.75-26 12-36.88 21.25L394.4 248.5c-2.875-1.75-6.625-1.125-9 1.375c-15 16.25-26.5 35.88-33.13 57.38c-1 3.375 .3751 6.875 3.25 8.5l25.75 15c-2.5 14-2.5 28.5 0 42.5l-25.75 15c-3 1.625-4.25 5.125-3.25 8.5c6.625 21.5 18.13 41 33.13 57.38c2.375 2.5 6 3.125 9 1.375l25.88-14.88c10.88 9.25 23.38 16.5 36.88 21.25v29.88c0 3.375 2.375 6.375 5.625 7c22.38 5 45 4.875 66.25 0c3.25-.625 5.75-3.625 5.75-7v-29.88c13.5-4.75 26-12 36.88-21.25l25.75 14.88c2.875 1.75 6.75 1.125 9-1.375c15-16.25 26.5-35.88 33.25-57.38c1-3.375-.3751-6.875-3.375-8.5L610.5 373.3zM496 400.5c-26.75 0-48.5-21.75-48.5-48.5s21.75-48.5 48.5-48.5c26.75 0 48.5 21.75 48.5 48.5S522.8 400.5 496 400.5z" />
+                      </svg>
+                      Deal Preferences
+                    </a>
+                    <a class="nav-link my-2 link-dark" id="nav-email-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-email" type="button" role="tab" aria-controls="nav-email"
+                    aria-selected="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20" viewBox="0 0 640 512"><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L478.9 160.8C412.3 167.2 356.5 210.8 332.6 270.6L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM294.4 339.2L320.8 319.4C320.3 324.9 320 330.4 320 336C320 378.5 335.1 417.6 360.2 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2zM640 336C640 415.5 575.5 480 496 480C416.5 480 352 415.5 352 336C352 256.5 416.5 192 496 192C575.5 192 640 256.5 640 336zM540.7 292.7L480 353.4L451.3 324.7C445.1 318.4 434.9 318.4 428.7 324.7C422.4 330.9 422.4 341.1 428.7 347.3L468.7 387.3C474.9 393.6 485.1 393.6 491.3 387.3L563.3 315.3C569.6 309.1 569.6 298.9 563.3 292.7C557.1 286.4 546.9 286.4 540.7 292.7H540.7z"/></svg>
+                    Email Preferences
+                  </a>
+                    <a class="nav-link my-2 link-dark" id="nav-billing-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-billing" type="button" role="tab" aria-controls="nav-billing"
+                      aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20"
+                        viewBox="0 0 576 512">
+                        <path
+                          d="M512 64C547.3 64 576 92.65 576 128V384C576 419.3 547.3 448 512 448H64C28.65 448 0 419.3 0 384V128C0 92.65 28.65 64 64 64H512zM272 192C263.2 192 256 199.2 256 208C256 216.8 263.2 224 272 224H496C504.8 224 512 216.8 512 208C512 199.2 504.8 192 496 192H272zM272 320H496C504.8 320 512 312.8 512 304C512 295.2 504.8 288 496 288H272C263.2 288 256 295.2 256 304C256 312.8 263.2 320 272 320zM164.1 160C164.1 148.9 155.1 139.9 143.1 139.9C132.9 139.9 123.9 148.9 123.9 160V166C118.3 167.2 112.1 168.9 108 171.1C93.06 177.9 80.07 190.5 76.91 208.8C75.14 219 76.08 228.9 80.32 237.8C84.47 246.6 91 252.8 97.63 257.3C109.2 265.2 124.5 269.8 136.2 273.3L138.4 273.9C152.4 278.2 161.8 281.3 167.7 285.6C170.2 287.4 171.1 288.8 171.4 289.7C171.8 290.5 172.4 292.3 171.7 296.3C171.1 299.8 169.2 302.8 163.7 305.1C157.6 307.7 147.7 309 134.9 307C128.9 306 118.2 302.4 108.7 299.2C106.5 298.4 104.3 297.7 102.3 297C91.84 293.5 80.51 299.2 77.02 309.7C73.53 320.2 79.2 331.5 89.68 334.1C90.89 335.4 92.39 335.9 94.11 336.5C101.1 339.2 114.4 343.4 123.9 345.6V352C123.9 363.1 132.9 372.1 143.1 372.1C155.1 372.1 164.1 363.1 164.1 352V346.5C169.4 345.5 174.6 343.1 179.4 341.9C195.2 335.2 207.8 322.2 211.1 303.2C212.9 292.8 212.1 282.8 208.1 273.7C204.2 264.7 197.9 258.1 191.2 253.3C179.1 244.4 162.9 239.6 150.8 235.9L149.1 235.7C135.8 231.4 126.2 228.4 120.1 224.2C117.5 222.4 116.7 221.2 116.5 220.7C116.3 220.3 115.7 219.1 116.3 215.7C116.7 213.7 118.2 210.4 124.5 207.6C130.1 204.7 140.9 203.1 153.1 204.1C157.5 205.7 171 208.3 174.9 209.3C185.5 212.2 196.5 205.8 199.3 195.1C202.2 184.5 195.8 173.5 185.1 170.7C180.7 169.5 170.7 167.5 164.1 166.3L164.1 160z" />
+                      </svg>
+                     Contact & Billing
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <!-- right side div -->
+            <div class="col-lg-8  col-md-9">
+              <div class="card">
+                <div class="card-header border-bottom mb-3 d-md-none">
+                  <ul class="nav nav-tabs card-header-tabs nav-fill" id="nav-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="20" height="20"
+                          viewBox="0 0 640 512">
+                          <path
+                            d="M223.1 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 223.1 256zM274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512h286.4c-1.246-5.531-1.43-11.31-.2832-17.04l14.28-71.41c1.943-9.723 6.676-18.56 13.68-25.56l45.72-45.72C363.3 322.4 321.2 304 274.7 304zM371.4 420.6c-2.514 2.512-4.227 5.715-4.924 9.203l-14.28 71.41c-1.258 6.289 4.293 11.84 10.59 10.59l71.42-14.29c3.482-.6992 6.682-2.406 9.195-4.922l125.3-125.3l-72.01-72.01L371.4 420.6zM629.5 255.7l-21.1-21.11c-14.06-14.06-36.85-14.06-50.91 0l-38.13 38.14l72.01 72.01l38.13-38.13C643.5 292.5 643.5 269.7 629.5 255.7z" />
+                        </svg>
+                      </a>
+                    </li>
+                   
+                    <li class="nav-item">
+                      <a class="nav-link" id="nav-security-tab" data-bs-toggle="tab" data-bs-target="#nav-security"
+                        type="button" role="tab" aria-controls="nav-security" aria-selected="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="20" height="20"
+                          viewBox="0 0 640 512">
+                          <path
+                            d="M622.3 271.1l-115.1-45.01c-4.125-1.629-12.62-3.754-22.25 0L369.8 271.1C359 275.2 352 285.1 352 295.1c0 111.6 68.75 188.8 132.9 213.9c9.625 3.75 18 1.625 22.25 0C558.4 489.9 640 420.5 640 295.1C640 285.1 633 275.2 622.3 271.1zM496 462.4V273.2l95.5 37.38C585.9 397.8 530.6 446 496 462.4zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM320.6 310.3C305.9 306.3 290.6 304 274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512H413.3c3.143 0 5.967-1.004 8.861-1.789C369.7 469.8 324.1 400.3 320.6 310.3z" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="nav-notification-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-notification" type="button" role="tab" aria-controls="nav-notification"
+                        aria-selected="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="20" height="20"
+                          viewBox="0 0 448 512">
+                          <path
+                            d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="nav-setting-tab" data-bs-toggle="tab" data-bs-target="#nav-setting"
+                        type="button" role="tab" aria-controls="nav-setting" aria-selected="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="20" height="20"
+                          viewBox="0 0 640 512">
+                          <path
+                            d="M425.1 482.6c-2.303-1.25-4.572-2.559-6.809-3.93l-7.818 4.493c-6.002 3.504-12.83 5.352-19.75 5.352c-10.71 0-21.13-4.492-28.97-12.75c-18.41-20.09-32.29-44.15-40.22-69.9c-5.352-18.06 2.343-36.87 17.83-45.24l8.018-4.669c-.0664-2.621-.0664-5.242 0-7.859l-7.655-4.461c-12.3-6.953-19.4-19.66-19.64-33.38C305.6 306.3 290.4 304 274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512H413.3c5.727 0 10.9-1.727 15.66-4.188c-2.271-4.984-3.86-10.3-3.86-16.06V482.6zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM610.5 373.3c2.625-14 2.625-28.5 0-42.5l25.75-15c3-1.625 4.375-5.125 3.375-8.5c-6.75-21.5-18.25-41.13-33.25-57.38c-2.25-2.5-6-3.125-9-1.375l-25.75 14.88c-10.88-9.25-23.38-16.5-36.88-21.25V212.3c0-3.375-2.5-6.375-5.75-7c-22.25-5-45-4.875-66.25 0c-3.25 .625-5.625 3.625-5.625 7v29.88c-13.5 4.75-26 12-36.88 21.25L394.4 248.5c-2.875-1.75-6.625-1.125-9 1.375c-15 16.25-26.5 35.88-33.13 57.38c-1 3.375 .3751 6.875 3.25 8.5l25.75 15c-2.5 14-2.5 28.5 0 42.5l-25.75 15c-3 1.625-4.25 5.125-3.25 8.5c6.625 21.5 18.13 41 33.13 57.38c2.375 2.5 6 3.125 9 1.375l25.88-14.88c10.88 9.25 23.38 16.5 36.88 21.25v29.88c0 3.375 2.375 6.375 5.625 7c22.38 5 45 4.875 66.25 0c3.25-.625 5.75-3.625 5.75-7v-29.88c13.5-4.75 26-12 36.88-21.25l25.75 14.88c2.875 1.75 6.75 1.125 9-1.375c15-16.25 26.5-35.88 33.25-57.38c1-3.375-.3751-6.875-3.375-8.5L610.5 373.3zM496 400.5c-26.75 0-48.5-21.75-48.5-48.5s21.75-48.5 48.5-48.5c26.75 0 48.5 21.75 48.5 48.5S522.8 400.5 496 400.5z" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="nav-email-tab" data-bs-toggle="tab" data-bs-target="#nav-email"
+                        type="button" role="tab" aria-controls="nav-email" aria-selected="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mb-1" width="20" height="20" viewBox="0 0 640 512"><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L478.9 160.8C412.3 167.2 356.5 210.8 332.6 270.6L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM294.4 339.2L320.8 319.4C320.3 324.9 320 330.4 320 336C320 378.5 335.1 417.6 360.2 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2zM640 336C640 415.5 575.5 480 496 480C416.5 480 352 415.5 352 336C352 256.5 416.5 192 496 192C575.5 192 640 256.5 640 336zM540.7 292.7L480 353.4L451.3 324.7C445.1 318.4 434.9 318.4 428.7 324.7C422.4 330.9 422.4 341.1 428.7 347.3L468.7 387.3C474.9 393.6 485.1 393.6 491.3 387.3L563.3 315.3C569.6 309.1 569.6 298.9 563.3 292.7C557.1 286.4 546.9 286.4 540.7 292.7H540.7z"/></svg>
+                       
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="nav-billing-tab" data-bs-toggle="tab" data-bs-target="#nav-billing"
+                        type="button" role="tab" aria-controls="nav-billing" aria-selected="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="20" height="20"
+                          viewBox="0 0 576 512">
+                          <path
+                            d="M512 64C547.3 64 576 92.65 576 128V384C576 419.3 547.3 448 512 448H64C28.65 448 0 419.3 0 384V128C0 92.65 28.65 64 64 64H512zM272 192C263.2 192 256 199.2 256 208C256 216.8 263.2 224 272 224H496C504.8 224 512 216.8 512 208C512 199.2 504.8 192 496 192H272zM272 320H496C504.8 320 512 312.8 512 304C512 295.2 504.8 288 496 288H272C263.2 288 256 295.2 256 304C256 312.8 263.2 320 272 320zM164.1 160C164.1 148.9 155.1 139.9 143.1 139.9C132.9 139.9 123.9 148.9 123.9 160V166C118.3 167.2 112.1 168.9 108 171.1C93.06 177.9 80.07 190.5 76.91 208.8C75.14 219 76.08 228.9 80.32 237.8C84.47 246.6 91 252.8 97.63 257.3C109.2 265.2 124.5 269.8 136.2 273.3L138.4 273.9C152.4 278.2 161.8 281.3 167.7 285.6C170.2 287.4 171.1 288.8 171.4 289.7C171.8 290.5 172.4 292.3 171.7 296.3C171.1 299.8 169.2 302.8 163.7 305.1C157.6 307.7 147.7 309 134.9 307C128.9 306 118.2 302.4 108.7 299.2C106.5 298.4 104.3 297.7 102.3 297C91.84 293.5 80.51 299.2 77.02 309.7C73.53 320.2 79.2 331.5 89.68 334.1C90.89 335.4 92.39 335.9 94.11 336.5C101.1 339.2 114.4 343.4 123.9 345.6V352C123.9 363.1 132.9 372.1 143.1 372.1C155.1 372.1 164.1 363.1 164.1 352V346.5C169.4 345.5 174.6 343.1 179.4 341.9C195.2 335.2 207.8 322.2 211.1 303.2C212.9 292.8 212.1 282.8 208.1 273.7C204.2 264.7 197.9 258.1 191.2 253.3C179.1 244.4 162.9 239.6 150.8 235.9L149.1 235.7C135.8 231.4 126.2 228.4 120.1 224.2C117.5 222.4 116.7 221.2 116.5 220.7C116.3 220.3 115.7 219.1 116.3 215.7C116.7 213.7 118.2 210.4 124.5 207.6C130.1 204.7 140.9 203.1 153.1 204.1C157.5 205.7 171 208.3 174.9 209.3C185.5 212.2 196.5 205.8 199.3 195.1C202.2 184.5 195.8 173.5 185.1 170.7C180.7 169.5 170.7 167.5 164.1 166.3L164.1 160z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body tab-content border-0" id="nav-tabContent">
+                  <!--Profile page starts here-->
+                  <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
+                    aria-labelledby="nav-profile-tab">
+                    <h6>Pofile Settings</h6>
+                    <hr>
+                    <div class="col-12 mx-auto  pb-3 d-flex justify-content-center flex-column align-items-center">
+                      <label for="upload" class="uploaded_img p-0 m-0">
+                        <img src="../base/images/user-profile.svg" class="img-fluid" id="show-final">
+                        <input type="file" id="upload" accept=".jpg, .jpeg, .png" hidden onchange="process()" />
+                      </label>
+                      <div>
+                        <div class="" id="change-profile">
+                          <label for="upload">
+                            <a role="button" class="link_color text-decoration-none">Change Profile</a>
+                          </label>
+                          <input type="file" id="upload" accept=".jpg, .jpeg, .png" hidden />
+                        </div>
+                        <!-- <button onclick="process()" class="btn btn-sm btn-primary">Save</button> -->
+                      </div>
+                      <!-- <div class="m-0 p-0">
+                                                <img id="input" />
+                                              </div>
+                                              <div class="m-0 p-0">
+                                                <img id="output" />
+                                              </div> -->
+                    </div>
+                    <form class="row g-3 mb-4">
+                      <div class="col-md-6">
+                        <label for="inputFname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" value="firstName" contenteditable="true" id="inputFname">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputFname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" value="lastName" contenteditable="true" id="inputFname">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" value="abc@gmail.com" contenteditable="true"
+                          id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPhone" class="form-label">Contact Number</label>
+                        <input type="tel" class="form-control" value="+971563454323" contenteditable="true"
+                          id="inputPhone">
+                      </div>
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" value="Dubai"
+                          contenteditable="true" placeholder="Address details">
+                      </div>
+                      <div class="col-12">
+                        <label for="inputAbout" class="form-label">Add Bio</label>
+                        <textarea name="aboutinfo" class="form-control" value="I am a business seller"
+                          contenteditable="true" id="inputAbout" cols="30" rows="5"
+                          placeholder="Add something about yourself.."></textarea>
+                      </div>
+                      <div class="col-12 form-group form-text small text-muted mb-2">
+                        All these details are optional and can be changed at any time and by filling them out you are
+                        giving us
+                        the consent to share these details whereever your profile appears.
+                      </div>
+                      <div class="col-12 d-flex justify-content-end">
+                        <button type="submit" class="btn bg_official text-white me-3">Update Profile</button>
+                        <button type="reset" class="btn bg_official text-white ms-3">Reset Changes</button>
+                      </div>
+                    </form>
+                    <div>
+                    </div>
+                  </div>
+                  <!--Profile page ends here-->
+
+                  <!--Security page starts here-->
+                  <div class="tab-pane fade" id="nav-security" role="tabpanel" aria-labelledby="nav-security-tab">
+                    <h6>Security Settings</h6>
+                    <hr>
+                    <form action="">
+                      <div class="mb-3">
+                        <h6>Change Password</h6>
+                        <small class="form-text text-muted mb-2">
+                          Changing your password after few months is recomended as it helps your account to be secure.
+                        </small>
+                        <div class="form-floating my-2">
+                          <input type="password" class="form-control" id="currentPassword" placeholder="Password">
+                          <label for="currentPassword">Current Password</label>
+                        </div>
+                        <div class="form-floating my-2">
+                          <input type="password" class="form-control" id="newPassword" placeholder="Password">
+                          <label for="newPassword">New Password</label>
+                        </div>
+                        <div class="form-floating my-2">
+                          <input type="password" class="form-control" id="confirmPassword" placeholder="Password">
+                          <label for="confirmPassword">Confirm Password</label>
+                        </div>
+                      </div>
+                    </form>
+                    <hr>
+                    <div class="form-group">
+                      <label class="d-block mb-2">Two Factor Authentication</label>
+                      <button class="btn bg_official text-white" type="submit">Enable two factor authentication</button>
+                      <p class="text-muted mt-2 small">Two factor authentication adds an additional layer of
+                        security to your account by requiring more than just aa password to log in.
+                      </p>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                      <label class="d-bllock mb-2">Session</label>
+                      <p class="text-muted small">Here is the list of devices that have logged into your account.If you
+                        do not recognise any session please write it to us.
+                      </p>
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          <div class="pb-3 pt-2">
+                            <h6>Cordinates of location</h6>
+                            <small class="text-muted">
+                              Location information
+                            </small>
+                            <button class="btn bg_official text-white btn-sm float-end d-block">Know more</button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--Security page ends here-->
+
+                  <!--Notifications page starts here-->
+                  <div class="tab-pane fade" id="nav-notification" role="tabpanel"
+                    aria-labelledby="nav-notification-tab">
+                    <h6>Notification Settings</h6>
+                    <hr>
+                    <form action="">
+                      <div class="mb-3">
+                        <label for="inputUsername" class="form-label d-block">Security Alerts</label>
+                        <small class="form-text text-muted">Recieve security alerts notification via email</small>
+                        <div class="form-check mt-2">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                          <label class="form-check-label small" for="flexCheckChecked">
+                            Email each time vulnerability is found.
+                          </label>
+                        </div>
+                        <div class="form-check ">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                          <label class="form-check-label small" for="flexCheckChecked">
+                            Email a digest summary of vulnerability.
+                          </label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="" class="d-block mb-2">SMS Notifications</label>
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            Top Selling Deals
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            Updates From People
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            Reminders
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            Events
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            New Deals
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </form>
+                  </div>
+                  <!--Notifications page ends  here-->
+
+                  <!-- Deal Settings page starts here-->
+                  <div class="tab-pane fade" id="nav-setting" role="tabpanel" aria-labelledby="nav-setting-tab">
+                    <h6>Deal Preferences</h6>
+                    <hr>
+                    <div class="container-fluid">
+                      <div class="col-12 my-4">
+                        <label for="locations_preferred" class="form-label d-block">Preferred Locations</label>
+                        <select class="location-selector" id="locations_ preferred" name="location" required>
+                          <option value="UAE">UAE</option>
+                          <option value="Abu Dhabi">Abu Dhabi</option>
+                          <option value=" Dubai"> Dubai</option>
+                          <option value="Sharjah">Sharjah</option>
+                          <option value="Ajman"> Ajman</option>
+                          <option value="Umm Al-Quwain">Umm Al-Quwain</option>
+                          <option value="Fujairah">Fujairah</option>
+                          <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                        </select>
+                      </div>
+                      <div class="col-12 my-4">
+                        <label for="preferred_industry" class="form-label d-block">Preferred Industries</label>
+                        <select class="location-selector" id="preferred_industry" name="Industry" required>
+                          <option value="apparel">Apparel</option>
+                          <option value="AI">Artificial Intelligence</option>
+                          <option value="building and construction">Building, COnstruction and Maintenance</option>
+                          <option value="business services">Business Services</option>
+                          <option value="coal">Coal</option>
+                          <option value="education">Education</option>
+                          <option value="electronic equipment">Electronic Equipment</option>
+                          <option value="energy">Energy</option>
+                          <option value="food & bevarage">Food & Bevarage</option>
+                          <option value="Freight & Logistics">Freight & Logistics</option>
+                          <option value="Healthcare">Healthcare</option>
+                          <option value="Industrial">Industrial</option>
+                          <option value="IT">Information Technology</option>
+                          <option value="Integrated Oil & Gas">Integrated Oil & Gas</option>
+                          <option value="Logistics">Logistics</option>
+                          <option value="media">Media</option>
+                          <option value="Oil & Gas exploration">Oil & Gas Exploration / Production</option>
+                          <option value="retail shops">Retail Shops</option>
+                          <option value="Robotics">Robotics</option>
+                          <option value="textiles">Textiles</option>
+                          <option value="travel & leisure">Travel & Leisure</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="col-12 my-4">
+                        <label for="size_preferred" class="form-label d-block">Preferred Deal Size</label>
+                        <select class="location-selector" id="size_ preferred" name="deal_size" required>
+                          <option value="0 - 100 Thousand AED">0 - 100 Thousand AED</option>
+                          <option value="100 Thousand - 10 Million AED">100 Thousand - 10 Million AED</option>
+                          <option value="10 Million- 100 Million AED">10 Million- 100 Million AED</option>
+                          <option value="100 Million - 1 Billion AED">00 Million - 1 Billion AED</option>
+                        </select>
+                      </div>
+                      <div class="col-12 mt-5 d-flex justify-content-end">
+                        <button class="btn btn-md bg_official text-white">Save Changes</button>
+                      </div>
+                    </div>
+                    <!--Settings page ends here-->
+                  </div>
+                  <!--Deal setting page ends here-->
+
+                  <!--Email preferences page starts here-->
+                  <div class="tab-pane fade" id="nav-email" role="tabpanel" aria-labelledby="nav-email-tab">
+                    <h6>Email Preferences</h6>
+                    <hr>
+                     <div class="container-fluid">
+                      <div class="col-12 my-4">
+                        <label for="emails" class="form-text small">Important Communications</label>
+                        <select class="form-select form-select-md mb-3" id="emails" aria-label=".form-select-lg example">
+                          <option value="Subscribed" selected>Subscribed</option>
+                          <option value="Unsubscribed">UnSubscribed</option>
+                        
+                        </select>
+                      </div>
+                      <div class="col-12 my-4">
+                        <label for="business_proposals" class="form-text small">Business Proposals</label>
+
+                        <select class="form-select form-select-md mb-3" id="business_proposals" aria-label=".form-select-lg example">
+                          <option value="Real Time" selected>Real Time</option>
+                         
+                          <option value="Daily">Daily</option>
+                          <option value="Weekly">Weekly</option>
+                          <option value="Fortnightly">Fortnightly</option>
+                          <option value="Monthly">Monthly</option>
+                          <option value="Quarterly">Quarterly</option>
+                          <option value="Half Yearly">Half Yearly</option>
+                          <option value="Yearly">Yearly</option>
+                          <option value="No Email">No Email</option>
+
+
+                        
+                        </select>
+                      </div>
+                      <div class="col-12 my-4">
+                        <label for="business_proposals" class="form-text small">New Opportunity Notifications</label>
+
+                        <select class="form-select form-select-md mb-3" id="business_proposals" aria-label=".form-select-lg example">
+                          <option value="Real Time" selected>Real Time</option>
+                          <option value="Daily">Daily</option>
+                          <option value="Weekly">Weekly</option>
+                          <option value="Fortnightly">Fortnightly</option>
+                          <option value="Monthly">Monthly</option>
+                          <option value="Quarterly">Quarterly</option>
+                          <option value="Half Yearly">Half Yearly</option>
+                          <option value="Yearly">Yearly</option>
+                          <option value="No Email">No Email</option>
+                         </select>
+                      </div>
+
+                     
+                     
+                      <div class="col-12 mt-5 d-flex justify-content-end">
+                        <button class="btn btn-md bg_official text-white">Save Changes</button>
+                      </div>
+                    </div> 
+                    <!--Settings page ends here-->
+                  </div>
+                  <!--Email preferences page ends here-->
+
+
+                  <!--Billing page starts here-->
+                  <div class="tab-pane fade" id="nav-billing" role="tabpanel" aria-labelledby="nav-billing-tab">
+                    <h6 class="pt-2">Contact & Billing</h6>
+                    <hr>
+                    <form action="">
+                      <div class="row mb-3">
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputname" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="inputname">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputcontact" class="form-label">Mobile Number</label>
+                          <input type="tel" class="form-control" id="inputcontact">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputlocation" class="form-label">Location</label>
+                          <input type="text" class="form-control" id="inputlocation">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputPassword4" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputTimezone" class="form-label">Timezone</label>
+                          <input type="text" class="form-control" id="inputTimezone">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputcompany_name" class="form-label">Company Name</label>
+                          <input type="text" class="form-control" id="inputcompany_name">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputdesignation" class="form-label">Designation</label>
+                          <input type="text" class="form-control" id="inputdesignation">
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-3">
+                          <label for="inputgst_number" class="form-label">GST Number</label>
+                          <input type="text" class="form-control" id="inputgst_number">
+                        </div>
+                        <div class="col-12 mb-3">
+                          <label for="inputAddress" class="form-label">Address</label>
+                          <input type="text" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="col-12 d-flex justify-content-end mb-3">
+                          <button type="submit" class="btn bg_official text-white">Save Changes</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!--Billing page ends here-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  </script>
+
+<!-- </body>
+
+</html> -->
+{% endblock %}

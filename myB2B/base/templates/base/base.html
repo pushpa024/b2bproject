@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <title>{{ title }}</title> -->
+    <title>{% block title %}{% endblock %}</title>
+    
+
+      <link rel="stylesheet" href='{% static "base/css/bootstrap.min.css" %}'>
+      <link rel="stylesheet" href='{% static "base/css/custom.css" %}'>
+      <link rel="stylesheet" href='{% static "base/css/header.css" %}'>
+      <link rel="stylesheet" href='{% static "base/css/footer.css" %}'>
+      
+
+      {% block extra_head_content %}{% endblock %}
+      
+
+      <!-- for swiper  -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"> -->
+      <!-- <script src='{% static "base/js/bootstrap.bundle.min.js" %}'></script> -->
+
+  </head>
+      <script src='{% static "base/js/bootstrap.bundle.min.js" %}'></script>
+  <style type="text/css">
+            .alert-error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert {
+              positition: relative;
+              opacity: 1;
+              visibility: visible;
+              transform: translateX(0px);
+              transition: visibility 0s, opacity 250ms, transform 250ms;
+                  }   
+        .alert.hide {
+            positition: relative;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-10px); // translateX, translateY, translateZ works well
+            transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
+        } 
+  </style>
+
+  <body class="d-flex flex-column h-100">
+  
+    <main class="flex-shrink-0">
+
+      {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+           
+             <!-- <div class="alert alert-{{ messages.tags }} alert-dismissible fade show" role="alert"> -->
+              <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                {{message}}
+                <!-- <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> -->
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+
+            {% endfor %}
+        </ul>
+      {% endif %}
+      <header id="container-header" class="shadow-sm pb-2 sticky-top flex-shrink-0">
+        {% if not user.is_authenticated %}
+      
+          {% include "base/components/header.html" %}
+        {% else %}
+
+          {% include "base/components/login-header1.html" %}
+        {% endif %}
+    
+      </header>
+
+      {% block content %} {% endblock %}
+      {% include "base/components/footer.html" %}
+        
+
+    </main>
+   <!-- <script src='{% static "base/js/bootstrap.bundle.min.js" %}'></script> -->
+   <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
+    <script src='{% static "base/js/custom.js" %}'></script>
+    
+    <script>
+    var m = document.getElementsByClassName("alert");  // Return an array of alert messages
+
+    setTimeout(function(){
+       if (m && m.length) {
+           // m[0].classList.add('hide');
+          m[0].style.display = "none";  // hide the alert after 5 sec.
+       }
+    }, 5000);
+    </script>
+    {% block extra_js %} {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,140 @@
+.link-a, .plan{
+  color: #1999ce !important;
+}
+.blue-box, .title, .comman-btn a, .row section .icon{    
+  background-color: #1999ce;
+}
+.plan-box.active-plan{
+  transform: scale(1.05);
+  border-top: 4px solid #1999ce !important;
+}
+.custom-container{
+  max-width: 1770px;
+  width: 90%;
+}
+#icons{
+  width: 30%;
+  /* margin-top: 5%; */
+ margin-left: 35%;
+}
+.phone-icon{
+  width: 18%;
+}
+.global-icon{
+  width: 23%;
+}
+.card{
+  width: 240px;
+  height: 250px;
+  margin-bottom: 5%;
+}
+/* Changed class name card to cards-row  */
+#cards-row{
+  width: 90%;
+  background-color: #eee;
+  margin:2px 2px 2px 5%;
+  padding: 1% 0% 1% 2%;
+}
+/*  */
+#col-plan{    
+  width: 20%;
+  max-width: 20%;
+  flex: 0 0 20%;
+  flex: auto !important;
+}
+.mt-100{
+  margin-top: 100px;
+}
+.plan-box{
+  box-shadow: 2px 2px 2px 2px #ddd;
+  min-height: 670px;
+}
+.plan-box .comman-btn{
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+.plan-list li::before {
+    content: '\2713';
+    color: #1999ce;
+    margin-right: 10px;
+    text-align: left;
+    margin-left: 0px;
+    margin-top: 2%;
+}
+.plan-list li .tooltip {
+    visibility: hidden;
+    transition: 0.2s;
+    width: 190px;
+    left: 0;
+    right: 0;
+    margin-top: -80px;
+}
+.plan-list li:hover .tooltip {
+    visibility: visible;
+}
+.plan-list li .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 45%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+
+@media (max-width: 1600px){
+  .plan-box{
+      margin-bottom: 20px;
+      min-height: auto;
+      padding: 20px 10px 70px 10px;
+  }
+  .plan-box .comman-btn{
+      bottom: 20px;
+  }
+  .plan-box .comman-btn a{
+      padding: 10px;
+      font-size: 14px;
+  }
+  .plan-list li, .plan-disp p{
+      font-size: 12px;
+  }
+}
+@media (max-width: 1199px){
+#col-plan{
+      width: 100%;
+      max-width: 33.33%;
+      padding-bottom: 15px;
+  }
+  .comman-btn a {
+      font-size: 14px;
+      padding: 13px;
+  }
+}
+@media (max-width: 991px){
+  .plan-list li .tooltip {
+      width: 140px;
+  }
+}
+@media (max-width: 768px) { 
+#col-plan {
+     max-width: 100%;
+     margin: 0px 5px;
+  }
+  .custom-container {
+      padding: 20px 0px;
+  }
+  .plan-box.active-plan{
+      transform: scale(1.0) !important;
+  }
+}
+@media (max-width: 587px){
+  .col-card{
+      flex:0 0 0% !important;
+      margin: 0px auto;
+  }
+  .comman-btn{
+     margin-bottom: -9px !important;
+  }
+}

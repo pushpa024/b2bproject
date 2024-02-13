@@ -1,0 +1,166 @@
+.official_bg{
+    background: #1999ce !important;
+}
+.link_color{
+    color: #1999ce;
+}
+.sm_text{
+    font-size: 11px;
+    font-weight: 500;
+}
+.heading_text{
+    font-size: 14px;
+}
+.franchise_img img{
+    width: 200px;
+     height: 110px !important;
+ }
+ .inv_img{
+     width: 5rem;
+     height: 5rem;
+ }
+
+.feeditem__premium {
+    height: 0;
+    width: 60px;
+    box-sizing: content-box;
+    top: 18px;
+    right: -21px;
+    border-bottom: 18px solid #40c070;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+.feeditem__premium::before {
+    content: attr(data-plan);
+    position: absolute;
+    top: 0;
+    width: 60px;
+    text-align: center;
+	font-size: 12px;
+    line-height: 18px;
+    border-bottom: 1px solid transparent;
+}
+.feeditem__premium::after {
+    content: "";
+    position: absolute;
+    top: -19px;
+    width: 96px;
+    border-top: 1px solid transparent;
+    height: 0;
+    left: -18px;
+    top: 18px;
+}
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%); */
+}
+.unverified_svg{
+    fill: rgb(179, 179, 179) !important;
+}
+
+/*Css specific to business for sale page*/
+.carousel-item img{
+    width: 100% !important;
+    height: 150px !important;
+}
+
+/*Css Specific to franchise page*/
+.franchise_img {
+    width: 60px;
+    height: 20px;
+}
+
+
+/*CSS specific to loggedout investor view page*/
+.disabled_label{
+    opacity: 1 !important;
+}
+.my_btns:active, .my_btns:focus{
+    box-shadow: none !important;
+}
+.disabled_check{
+    opacity: 1 !important;
+}
+.bg_black{
+    background-color: black !important;
+}
+.add_opacity{
+    opacity: 0.8;
+}
+.hide_form{
+    display: none !important;
+}
+#psw{
+    position: relative;
+}
+
+#message {
+    display:none;
+    width: 300px;
+    color: #000;
+    padding: 5px 20px;
+    margin-top: 10px;
+    position: absolute;
+    border-radius: 0.3rem;
+    background: white;
+    border: 1px solid maroon;
+  }
+  b{
+      color: #1999ce;
+  }
+  #message h3{
+      font-size: 0.6rem;
+      color: black;
+  }
+  #message p {
+    padding: 0 30px;
+    font-size: 10px;
+    color: black;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -30px;
+    content: "✔";
+  }
+  
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: rgb(238, 25, 25);
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -30px;
+    content: "✖";
+  }
+.match_password{
+    background: white;
+    font-size: 11px;
+    padding-left: 10px;
+    color: red;
+    width: 70%;
+    margin: auto;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

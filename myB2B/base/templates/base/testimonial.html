@@ -1,0 +1,447 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Huntment | Testimonials
+{% endblock %}
+
+
+{% block content %}
+{% block extra_head_content %}
+ <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+  
+<style type="text/css">
+	.testimonial-bg{
+    border: 10px solid #1999ce;
+    padding: 20px 10px;
+    text-align: center;
+    position: relative;
+}
+.testimonial-bg:before{
+    content: "Client Testimonials";
+    font-family: "fontawesome";
+    width:250px;
+    height: 75px;
+    line-height: 75px;
+    background: #fff;
+    text-align: center;
+    font-size: 30px;
+    color: #1999ce;
+    position: absolute;
+    top: -45px;
+    left: 2%;
+}
+.testimonial{
+    padding: 0 15px;
+}
+.testimonial .description{
+   
+    font-size: 16px;
+    font-weight:400;
+    /* font-style: italic; */
+    color: #848484;
+    line-height: 30px;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.testimonial .description:before{
+    content: "";
+    width: 75%;
+    border-top: 1px solid #1999ce;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.testimonial .description:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    border-bottom: 1px solid #1999ce;
+    border-right: 1px solid #1999ce;
+    transform: translateX(-50%) rotate(45deg);
+}
+.testimonial .pic{
+    border: 2px solid #1999ce;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 25px auto;
+    overflow: hidden;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+}
+.testimonial .title{
+    display: inline-block;
+    font-size: 23px;
+    font-weight: 700;
+    color: #848484;
+    text-transform: capitalize;
+    margin: 0;
+}
+.testimonial .post{
+    display: inline-block;
+    font-size: 20px;
+    color: #848484;
+}
+.owl-theme .owl-controls{
+    background: #fff;
+    margin-top: 10px;
+    position: absolute;
+    bottom: -9%;
+    right: 40px;
+}
+.owl-theme .owl-controls .owl-buttons div{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #1999ce;
+    opacity: 1;
+    padding: 0;
+}
+.owl-prev:before,
+.owl-next:before{
+    content: "<";
+    font-family: "fontawesome";
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+}
+.owl-next:before{
+    content:">";
+}
+
+
+/* second section  */
+.blockquote-custom {
+  position: relative;
+  font-size: 1.1rem;
+  height: 22rem;
+}
+
+.blockquote-custom-icon {
+    border: 2px solid #1999ce;
+    background-image: url('{% static "base/images/testimonial-images/person1.jpg" %}');
+    background-position: center;
+    background-size: contain;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: 50px;
+}
+.custom-cards {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+@media only screen and (max-width:767px){
+    .testimonial-bg{ padding: 50px 40px; }
+    .owl-theme .owl-controls{ bottom: -22%; }
+    .custom-cards {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+.blockquote-custom {
+
+  height: 25rem;
+}
+.testimonial-bg:before{
+    content: "Client Testimonials";
+    font-family: "fontawesome";
+    width:200px !important;
+    height: 75px;
+    line-height: 75px;
+    background: #fff;
+    text-align: center;
+    font-size: 24px !important;
+    color: #1999ce;
+    position: absolute;
+    top: -32px !important;
+    left: 2%;
+}
+.owl-theme .owl-controls{
+
+    background: #fff;
+    margin-top: 10px;
+    position: absolute;
+    bottom: -5.5% !important;
+    right: 40px;
+}
+
+}
+@media only screen and (max-width:480px){
+    .testimonial-bg:before{
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        font-size: 40px;
+    }
+    .testimonial-bg{ padding: 30px 10px; }
+    .owl-theme .owl-controls{ bottom: -15%; }
+}
+@media only screen and (max-width:360px){
+    .testimonial .title,
+    .testimonial .post{
+        font-size: 16px;
+    }
+    .owl-theme .owl-controls{ bottom: -12%; }
+}
+</style>
+{% endblock %}
+
+<section class="container mt-5 pb-3">
+        <h5 class="text-center pb-5">Few of our Successful Deals</h5>
+        <div  class="custom-cards">
+            <section class="py-3">
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+            
+                            
+                            <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                                <div class="blockquote-custom-icon shadow-sm"></div>
+                                <p class="mb-0 mt-2 fs-6 font-italic">"Online based meal kit company with 200+ orders per month seeks investment for business expansion." received introductions via SMERGERS and successfully closed the deal with - "Director, Restaurants, Singapore, Individual Investor / Buyer". Time taken to connect: 1 month."</p>
+                                <footer class="blockquote-footer pt-4 mt-4 border-top">Founder, Chef Up Malaysia, 
+                                    <cite title="Source Title">Subang Jaya</cite>
+                                </footer>
+                            </blockquote>
+            
+                        </div>
+                    </div>
+               
+            </section>
+
+
+            <section class="py-3">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+        
+                        
+                        <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                            <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                            <p class="mb-0 mt-2 fs-6 font-italic">"Online based meal kit company with 200+ orders per month seeks investment for business expansion." received introductions via SMERGERS and successfully closed the deal with - "Director, Restaurants, Singapore, Individual Investor / Buyer". Time taken to connect: 1 month."</p>
+                            
+                            <footer class="blockquote-footer pt-4 mt-4 border-top">Founder, Chef Up Malaysia, 
+                                <cite title="Source Title">Subang Jaya</cite>
+                            </footer>
+                        </blockquote>
+        
+                    </div>
+                </div>
+           
+            </section>
+
+        <section class="py-3">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+    
+                    
+                    <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                        <p class="mb-0 mt-2 fs-6 font-italic">"Online based meal kit company with 200+ orders per month seeks investment for business expansion." received introductions via SMERGERS and successfully closed the deal with - "Director, Restaurants, Singapore, Individual Investor / Buyer". Time taken to connect: 1 month."</p>
+
+                        <footer class="blockquote-footer pt-4 mt-4 border-top">Founder, Chef Up Malaysia, 
+                            <cite title="Source Title">Subang Jaya</cite>
+                        </footer>
+                    </blockquote>
+    
+                </div>
+            </div>
+       
+    </section>
+
+    <section class="py-3">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+
+                
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                    <p class="mb-0 mt-2 fs-6 font-italic">"Online based meal kit company with 200+ orders per month seeks investment for business expansion." received introductions via SMERGERS and successfully closed the deal with - "Director, Restaurants, Singapore, Individual Investor / Buyer". Time taken to connect: 1 month."</p>
+
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">Founder, Chef Up Malaysia, 
+                        <cite title="Source Title">Subang Jaya</cite>
+                    </footer>
+                </blockquote>
+
+            </div>
+        </div>
+   
+</section>
+
+<section class="py-3">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+
+            
+            <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                <p class="mb-0 mt-2 fs-6 font-italic">"Online based meal kit company with 200+ orders per month seeks investment for business expansion." received introductions via SMERGERS and successfully closed the deal with - "Director, Restaurants, Singapore, Individual Investor / Buyer". Time taken to connect: 1 month."</p>
+                
+                <footer class="blockquote-footer pt-4 mt-4 border-top">Founder, Chef Up Malaysia, 
+                    <cite title="Source Title">Subang Jaya</cite>
+                </footer>
+            </blockquote>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="py-3">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+
+            
+            <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                <p class="mb-0 mt-2 fs-6 font-italic">"Online based meal kit company with 200+ orders per month seeks investment for business expansion." received introductions via SMERGERS and successfully closed the deal with - "Director, Restaurants, Singapore, Individual Investor / Buyer". Time taken to connect: 1 month."</p>
+                
+                <footer class="blockquote-footer pt-4 mt-4 border-top">Founder, Chef Up Malaysia, 
+                    <cite title="Source Title">Subang Jaya</cite>
+                </footer>
+            </blockquote>
+
+        </div>
+    </div>
+
+</section>
+
+
+</section>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-2">
+                <div class="testimonial-bg">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="testimonial">
+                            <p class="description">
+                                I was working on my startup idea pre-Covid, but due to lack of funds and the pandemic, we had to shut down our operations. I wanted to sell my business as a shell company that was incorporated as a private limited legal entity. Through some internet research, I came across HUNTMENT, which is an online platform that helps business owners and investors connect. The onboarding process was very smooth. Within the first 2-3 months I received various inquiries. I had an initial discussion with 2 investors before I was able to close a deal. The entire process took 3 months and I was successfully able to sell my company. My experience on the platform was amazing and therefore I would recommend HUNTMENT to any entrepreneur/ business owner who is looking to raise funds or sell their company.
+                            </p>
+                           
+                            <div class="pic">
+                                <img src='{% static "base/images/testimonial-images/person1.jpg" %}' alt="img" class="img-fluid">
+                            </div>
+                            <div>
+                                <h3>Customer Name1</h3>
+                                 <p>Director, Cygnus Digital Innovations Pvt Ltd, Gurgaon</p>
+                                 <p><li style="color: #1999ce;" >Successfully closed deal with the. Time taken to connect: 5 months</li></p>
+                            </div>
+                        </div>
+     
+                        <div class="testimonial">
+                            <p class="description">
+                              Company that was incorporated as a private limited legal entity. Through some internet research, I came across HUNTMENT, which is an online platform that helps business owners and investors connect. The onboarding process was very smooth. Within the first 2-3 months I received various inquiries. I had an initial discussion with 2 investors before I was able to close a deal. The entire process took 3 months and I was successfully able to sell my company. My experience on the platform was amazing and therefore I would recommend HUNTMENT to any entrepreneur/ business owner who is looking to raise funds or sell their company.
+                            </p>
+                           
+                            <div class="pic">
+                                <img src='{% static "base/images/testimonial-images/person1.jpg" %}' alt="img" class="img-fluid">
+                            </div>
+                            <div>
+                                <h3>Customer Name2</h3>
+                                 <p>Director, Cygnus Digital Innovations Pvt Ltd, Gurgaon</p>
+                                 <p><li style="color: #1999ce;" >Successfully closed deal with the. Time taken to connect: 5 months</li></p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial">
+                            <p class="description">
+                              Company that was incorporated as a private limited legal entity. Through some internet research, I came across HUNTMENT, which is an online platform that helps business owners and investors connect. The onboarding process was very smooth. Within the first 2-3 months I received various inquiries. I had an initial discussion with 2 investors before I was able to close a deal. The entire process took 3 months and I was successfully able to sell my company. My experience on the platform was amazing and therefore I would recommend HUNTMENT to any entrepreneur/ business owner who is looking to raise funds or sell their company.
+                            </p>
+                           
+                            <div class="pic">
+                                <img src='{% static "base/images/testimonial-images/person1.jpg" %}' alt="img" class="img-fluid">
+                            </div>
+                            <div>
+                                <h3>Customer Name3</h3>
+                                 <p>Director, Cygnus Digital Innovations Pvt Ltd, Gurgaon</p>
+                                 <p><li style="color: #1999ce;" >Successfully closed deal with the. Time taken to connect: 5 months</li></p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial">
+                            <p class="description">
+                              Company that was incorporated as a private limited legal entity. Through some internet research, I came across HUNTMENT, which is an online platform that helps business owners and investors connect. The onboarding process was very smooth. Within the first 2-3 months I received various inquiries. I had an initial discussion with 2 investors before I was able to close a deal. The entire process took 3 months and I was successfully able to sell my company. My experience on the platform was amazing and therefore I would recommend HUNTMENT to any entrepreneur/ business owner who is looking to raise funds or sell their company.
+                            </p>
+                           
+                            <div class="pic">
+                                <img src='{% static "base/images/testimonial-images/person1.jpg" %}' alt="img" class="img-fluid">
+                            </div>
+                            <div>
+                                <h3>Customer Name4</h3>
+                                 <p>Director, Cygnus Digital Innovations Pvt Ltd, Gurgaon</p>
+                                 <p><li style="color: #1999ce;" >Successfully closed deal with the. Time taken to connect: 5 months</li></p>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial">
+                            <p class="description">
+                              Company that was incorporated as a private limited legal entity. Through some internet research, I came across HUNTMENT, which is an online platform that helps business owners and investors connect. The onboarding process was very smooth. Within the first 2-3 months I received various inquiries. I had an initial discussion with 2 investors before I was able to close a deal. The entire process took 3 months and I was successfully able to sell my company. My experience on the platform was amazing and therefore I would recommend HUNTMENT to any entrepreneur/ business owner who is looking to raise funds or sell their company.
+                            </p>
+                           
+                            <div class="pic">
+                                <img src='{% static "base/images/testimonial-images/person1.jpg" %}' alt="img" class="img-fluid">
+                            </div>
+                            <div>
+                                <h3>Customer Name5</h3>
+                                 <p>Director, Cygnus Digital Innovations Pvt Ltd, Gurgaon</p>
+                                 <p><li style="color: #1999ce;" >Successfully closed deal with the. Time taken to connect: 5 months</li></p>
+                            </div>
+                        </div>
+                        
+
+                        <div class="testimonial">
+                            <p class="description">
+                              Company that was incorporated as a private limited legal entity. Through some internet research, I came across HUNTMENT, which is an online platform that helps business owners and investors connect. The onboarding process was very smooth. Within the first 2-3 months I received various inquiries. I had an initial discussion with 2 investors before I was able to close a deal. The entire process took 3 months and I was successfully able to sell my company. My experience on the platform was amazing and therefore I would recommend SMERGERS to any entrepreneur/ business owner who is looking to raise funds or sell their company.
+                            </p>
+                           
+                            <div class="pic">
+                                <img src='{% static "base/images/testimonial-images/person1.jpg" %}' alt="img" class="img-fluid">
+                            </div>
+                            <div>
+                                <h3>Customer Name6</h3>
+                                 <p>Director, Cygnus Digital Innovations Pvt Ltd, Gurgaon</p>
+                                 <p><li style="color: #1999ce;" >Successfully closed deal with the. Time taken to connect: 5 months</li></p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %} 
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:1,
+        itemsDesktop:[1000,1],
+        itemsDesktopSmall:[979,1],
+        itemsTablet:[768,1],
+        pagination:false,
+        navigation:true,
+        navigationText:["",""],
+        autoPlay:true
+    });
+})
+</script>
+{% endblock %}

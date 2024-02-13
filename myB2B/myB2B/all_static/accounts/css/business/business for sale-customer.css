@@ -1,0 +1,21 @@
+
+#icons1{
+    font-size: 10px;
+}
+.slider-image{
+    width: 90%;
+    height: 60%;
+}
+.slider-image-description{
+    bottom: 18px;
+}
+.alert{
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 2px #ddd;
+}
+.official-color{
+    color: #1999ce;
+}
+.swiper-pagination{
+    top: 100%;
+}

@@ -1,0 +1,129 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Blog | Huntment
+{% endblock %}
+
+
+{% block content %}
+{% block extra_head_content %}
+
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+   <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href='{% static "base/css/bootstrap.min.css" %}'>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  -->
+{% endblock %}
+
+    <div class=" pt-3 px-5">
+        <a href="{% url 'home' %}" class="text-decoration-none" style="color: #1999ce;">Home</a>
+        <span>/</span>
+        <a href="" class="text-decoration-none text-secondary">Blog</a>
+    </div>
+    <main class="container">
+        <div class="p-4 p-md-5 my-4 rounded text-bg-dark">
+          <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
+            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+            <p class="lead mb-0"><a href="#" class="fw-bold" style="color: #1999ce;">Continue reading...</a></p>
+          </div>
+        </div>
+      
+        <div class="row mb-2">
+          <div class="col-md-6 ">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2" style="color: #1999ce;">World</strong>
+                <h6 class="mb-0 fw-bold">The impact of COVID-19 on small and medium businesses</h6>
+                <div class="mb-1 text-muted">Jan 18, 2021</div>
+                <p class="card-text mb-auto">The pandemic has engulfed a major part of 2020. The world started going into lockdown around the month<span id="collapseOne" class="collapse" aria-labelledby="headingOne"> of March and small and medium businesses across the world were the segment that has been affected the most. The industries that have evidently been affected include – real estate & construction, hotel, restaurant, and transportation. As the world ventures into a new year, here is a look at the pandemic’s effect on small businesses.</span></p>
+                <a href="#" class="stretched-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: #1999ce;">Continue reading</a>
+              </div>
+              <div class="col-auto d-none d-lg-block ">
+                <img src="{% static 'base/images/in_progress_pic.png' %}" alt="post-img" class="bd-placeholder-img img-fluid" style="width:200px; height:250px;" >
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2" style="color: #1999ce;">Business</strong>
+                <h6 class="mb-0 fw-bold">How To Exit From Your Startup Investment.</h6>
+                <div class="mb-1 text-muted">Jan 09, 2021</div>
+                <p class="card-text mb-auto">A business exit strategy is a method used by investors such as venture capitalists <span id="collapseSix" class="collapse" aria-labelledby="headingSix">and angel investors to receive a cash out of their investment. It gives them a way to reduce or liquidate stake in a business and if the business is successful make a substantial profit. It also helps to limit losses in case the business has not been successful. Some of the common exit strategies include initial public offerings (IPO), strategic acquisitions and management buyouts (MBO). The strategy chosen for exit would depend on numerous factors with each method offering its own advantages and disadvantages</span></p>
+                <a href="#" class="stretched-link" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="color: #1999ce;">Continue reading</a>
+            </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{% static 'base/images/in_progress_pic.png' %}" alt="post-img" class="bd-placeholder-img img-fluid" style="width:200px; height:250px;" >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2" style="color: #1999ce;">Bank</strong>
+                <h6 class="mb-0 fw-bold">Personal Loan: Is It A Good Idea For Your Business?</h6>
+                <div class="mb-1 text-muted">Oct 30, 2019</div>
+                <p class="card-text mb-auto">The right financing for your business can come in many forms, as well as many sources. <span id="collapseFive" class="collapse" aria-labelledby="headingFive">There’s crowdfunding, alternative lenders, bank loans, unsecured loans, secured loans, lines of credit, term loans, equity, debt, and many more. At a particular point, you may want to settle for a straightforward and simple personal loan instead.</span> </p>
+                <a href="#" class="stretched-link" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="color: #1999ce;">Continue reading</a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{% static 'base/images/in_progress_pic.png' %}" alt="post-img" class="bd-placeholder-img img-fluid" style="width:200px; height:250px;" >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2" style="color: #1999ce;">Business</strong>
+                <h6 class="mb-0 fw-bold">5 Ways to Build Up Your E-commerce Business</h6>
+                <div class="mb-1 text-muted">Oct 23, 2019</div>
+                <p class="card-text mb-auto">While e-commerce may never eclipse in-store retail sales, e-commerce is a giant<span id="collapseFour" class="collapse" aria-labelledby="headingFour"> that continues to grow. Currently, about 14% of all retail sales are done online while by 2022, that number is expected to increase to 20%. </span> </p>
+                <a href="#" class="stretched-link" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="color: #1999ce;">Continue reading</a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{% static 'base/images/in_progress_pic.png' %}" alt="post-img" class="bd-placeholder-img img-fluid" style="width:200px; height:250px;" >
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2" style="color: #1999ce;">Funding</strong>
+                <h6 class="mb-0 fw-bold">Business Acquisition and Funding Initial Cash Flow</h6>
+                <div class="mb-1 text-muted">Oct 22, 2019</div>
+                <p class="card-text mb-auto">What’s in this guide: with nearly a decade's worth of experience <span id="collapseThree" class="collapse" aria-labelledby="headingThree">in business financing, franchising, and business selling, we at SMERGERS have a tried and tested guide to help entrepreneurs raise finance for business acquisitions. </span></p>
+                <a href="#" class="stretched-link" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: #1999ce;">Continue reading</a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{% static 'base/images/in_progress_pic.png' %}" alt="post-img" class="bd-placeholder-img img-fluid" style="width:200px; height:250px;" >
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2" style="color: #1999ce;">Guide</strong>
+                <h6 class="mb-0 fw-bold">Business Owner's Guide to M&A and its 12 Important Jargons</h6>
+                <div class="mb-1 text-muted">Sep 13, 2019</div>
+                <p class="card-text mb-auto ">In this post we explain the fundamentals of M&A, we describe specialists who are part of the M&A process, <span id="collapseTwo" class="collapse" aria-labelledby="headingTwo">and we highlight 12 most common jargons used during an M&A transaction. M&A stands for Mergers and Acquisitions.</span> </p>
+                <a href="#" class="stretched-link" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: #1999ce;">Continue reading</a>
+                
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{% static 'base/images/in_progress_pic.png' %}" alt="post-img" class="bd-placeholder-img img-fluid" style="width:200px; height:250px;" >
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+      
+      </main>
+{% endblock %}

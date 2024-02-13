@@ -1,0 +1,233 @@
+/*html {
+  scroll-behavior: smooth;
+}*/
+.part-1 {
+  width: 78%;
+  height: 40px;
+}
+.mobile-dropdown {
+  margin-left: -100% !important;
+}
+
+.dropdown-menu{
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.search_field {
+  border: none;
+  outline: none;
+}
+.btn-group {
+  display: flex;
+  justify-content: space-evenly;
+  width: 17%;
+}
+svg {
+  width: 19px;
+  opacity: 0.4;
+}
+svg:hover {
+  opacity: 0.8;
+}
+.user {
+  width: 36px;
+}
+.user:hover {
+  opacity: 0.6;
+}
+.add-profile {
+  background-color: #1999ce;
+}
+.dropdown-menu {
+  top: 35px !important;
+  margin-top: 0.125rem !important;
+  min-width: 50px !important;
+}
+/* drop down */
+.dropbtn-1,
+.dropbtn-2,
+.dropbtn-3 {
+  cursor: pointer;
+}
+.dropdown-content-1,
+.dropdown-content-2,
+.dropdown-content-3 {
+  right: 0;
+  display: none;
+  min-width: 340px;
+  z-index: 1;
+  margin-top: 1px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+}
+.dropdown-content-3 {
+  min-width: 250px;
+}
+.hoverLine {
+  color: #1999ce;
+}
+.hoverLine:hover {
+  text-decoration: underline !important;
+}
+.first {
+  border-bottom: 2px solid rgb(234, 232, 232);
+}
+/* with javascript */
+.show-1,
+.show-2,
+.show-3 {
+  display: block;
+}
+div.scroll {
+  height: 210px;
+}
+div img {
+  width: 80px;
+  height: 70px;
+}
+header {
+  padding-bottom: 3px;
+  /* border-bottom: 1px solid gray; */
+  box-shadow: 2px 2px 2px 2px #ddd;
+  background-color: white;
+}
+section {
+  padding-top: 6px;
+}
+.menu_btn {
+  padding-right: 30px;
+  padding-top: 8px;
+}
+.profile-dp {
+  width: 80px;
+}
+.file-input {
+  height: 24px;
+  width: 16px;
+  border: none !important;
+  z-index: 10;
+}
+.imageInput {
+  border: 1px solid gray;
+  right: 160px;
+  bottom: 18px;
+}
+.nav-pills {
+  margin-left: -170px;
+}
+.nav-item ul,
+.dropdown-menu-slide-menu ul {
+  transform: translate3d(0px, 0px, 0px) !important;
+}
+.dropdown-menu-slide-menu ul {
+  width: 40% !important;
+  justify-content: center;
+  margin-left: 35px !important;
+}
+.dropdown-menu-slide ul {
+  transform: translate3d(40px, 138px, 0px) !important;
+  width: 60% !important;
+  right: 20px;
+}
+.dropdown ul {
+  transform: translate3d(10px, 0px, 0px) !important;
+  z-index: 12;
+}
+.dropdown-item {
+  color: #1999ce;
+}
+.nav-item a:hover {
+  color: #1999ce;
+}
+.userDropdownDiv ul {
+  transform: translate3d(40px, 0px, 0px) !important;
+  width: 90% !important;
+  z-index: 12;
+}
+#userDropdown ul {
+  transform: translate3d(0px, 0px, 0px) !important;
+  width: 100% !important;
+  z-index: 300;
+}
+#companyMobile ul {
+  width: 60px;
+  height: 100px;
+  transform: translate3d(90px, 0px, 60px) !important;
+  width: 60% !important;
+  z-index: 10;
+}
+.file-input-slide {
+  height: 18px;
+  width: 40px;
+  left: 36px;
+  z-index: 10;
+}
+.navbar {
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+@media screen and (max-width: 566px) {
+  .mail-notif {
+    margin-left: -50% !important;
+  }
+  .logo_img {
+    width: 88% !important;
+  }
+}
+@media screen and (max-width: 566px) {
+  .search-media {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 966px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+}
+@media screen and (max-width: 966px) {
+  .offcanvas-body {
+    height: 50vh !important;
+    overflow-y: auto;
+  }
+  .list-group {
+    height: 84vh !important;
+    overflow-y: auto;
+  }
+  .menu_btn {
+    padding-right: 6px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .notification {
+    display: flex;
+    justify-content: space-around !important;
+    padding: 0px 18px;
+  }
+  .mail {
+    padding: 0px 12px !important;
+  }
+  .offcanvas-body {
+    overflow-y: unset;
+  }
+  .dropdown-menu {
+    margin-top: 0.125rem !important;
+    width: 380px !important;
+  }
+  .profile-image-wrapper {
+    width: 200px;
+  }
+  .userDropdownMobile {
+    margin-left: -30px !important;
+    transform: translate3d(0px, 8px, 0px) !important;
+  }
+  .userMobile {
+    width: 45px;
+  }
+  .bottom_nav {
+    display: none;
+  }
+}

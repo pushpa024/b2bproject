@@ -1,0 +1,1347 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+{% block extra_head_content %}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "accounts/css/business/business for sale-customer.css" %}' />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+{% endblock %}
+
+ <!--    <title>Business for sale customer view</title>
+  </head>
+  <body> -->
+    
+
+    <!--  -->
+    <div class="container py-4">
+        <div class="alert  alert-dismissible fade show " role="alert">
+            <strong class="text col-2">{{form.inputFname}}</strong> you have successfully created a member profile on HUNTMENT and you have received 2 free introduction credits. Your profile is currently under review. Having a complete profile helps us review your profile within a few hours. You can manage your profile using the following links:
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="btn py-3">
+            <button type="button" class="btn btn-light">
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M447.1 0h-384c-35.25 0-64 28.75-64 63.1v287.1c0 35.25 28.75 63.1 64 63.1h96v83.98c0 9.836 11.02 15.55 19.12 9.7l124.9-93.68h144c35.25 0 64-28.75 64-63.1V63.1C511.1 28.75 483.2 0 447.1 0zM464 352c0 8.75-7.25 16-16 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0 16 7.25 16 16V352z"
+              />
+            </svg>
+            <span class="button-label">View Intros</span>
+            </button>
+            <button type="button" class="btn btn-light m-2">
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M0 128C0 92.65 28.65 64 64 64H448C483.3 64 512 92.65 512 128V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V128zM48 128V150.1L220.5 291.7C241.1 308.7 270.9 308.7 291.5 291.7L464 150.1V127.1C464 119.2 456.8 111.1 448 111.1H64C55.16 111.1 48 119.2 48 127.1L48 128zM48 212.2V384C48 392.8 55.16 400 64 400H448C456.8 400 464 392.8 464 384V212.2L322 328.8C283.6 360.3 228.4 360.3 189.1 328.8L48 212.2z"
+              />
+            </svg>
+            <span class="button-label text-nowrap"> Matching Investors </span>
+            </button>
+            <button type="button" class="btn btn-light">
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M373.1 24.97C401.2-3.147 446.8-3.147 474.9 24.97L487 37.09C515.1 65.21 515.1 110.8 487 138.9L289.8 336.2C281.1 344.8 270.4 351.1 258.6 354.5L158.6 383.1C150.2 385.5 141.2 383.1 135 376.1C128.9 370.8 126.5 361.8 128.9 353.4L157.5 253.4C160.9 241.6 167.2 230.9 175.8 222.2L373.1 24.97zM440.1 58.91C431.6 49.54 416.4 49.54 407 58.91L377.9 88L424 134.1L453.1 104.1C462.5 95.6 462.5 80.4 453.1 71.03L440.1 58.91zM203.7 266.6L186.9 325.1L245.4 308.3C249.4 307.2 252.9 305.1 255.8 302.2L390.1 168L344 121.9L209.8 256.2C206.9 259.1 204.8 262.6 203.7 266.6zM200 64C213.3 64 224 74.75 224 88C224 101.3 213.3 112 200 112H88C65.91 112 48 129.9 48 152V424C48 446.1 65.91 464 88 464H360C382.1 464 400 446.1 400 424V312C400 298.7 410.7 288 424 288C437.3 288 448 298.7 448 312V424C448 472.6 408.6 512 360 512H88C39.4 512 0 472.6 0 424V152C0 103.4 39.4 64 88 64H200z"
+              />
+            </svg>
+            <span class="button-label"> Edit </span>
+            </button>
+            <button type="button" class="btn btn-light">
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M160 400C160 408.8 152.8 416 144 416C135.2 416 128 408.8 128 400V192C128 183.2 135.2 176 144 176C152.8 176 160 183.2 160 192V400zM240 400C240 408.8 232.8 416 224 416C215.2 416 208 408.8 208 400V192C208 183.2 215.2 176 224 176C232.8 176 240 183.2 240 192V400zM320 400C320 408.8 312.8 416 304 416C295.2 416 288 408.8 288 400V192C288 183.2 295.2 176 304 176C312.8 176 320 183.2 320 192V400zM317.5 24.94L354.2 80H424C437.3 80 448 90.75 448 104C448 117.3 437.3 128 424 128H416V432C416 476.2 380.2 512 336 512H112C67.82 512 32 476.2 32 432V128H24C10.75 128 0 117.3 0 104C0 90.75 10.75 80 24 80H93.82L130.5 24.94C140.9 9.357 158.4 0 177.1 0H270.9C289.6 0 307.1 9.358 317.5 24.94H317.5zM151.5 80H296.5L277.5 51.56C276 49.34 273.5 48 270.9 48H177.1C174.5 48 171.1 49.34 170.5 51.56L151.5 80zM80 432C80 449.7 94.33 464 112 464H336C353.7 464 368 449.7 368 432V128H80V432z"
+              />
+            </svg>
+            <span class="button-label"> Delete </span>
+            </button>
+            </div>
+      
+          </div>
+     <nav aria-label="breadcrumb " >
+      <ol class="breadcrumb ">
+        <li class="breadcrumb-item">
+          <a href="#" class="text-decoration-none link_color">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#" class="text-decoration-none link_color">Businesses</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#" class="text-decoration-none link_color">Location</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Business Name
+        </li>
+      </ol>
+    </nav>
+    </div>
+
+
+    <!-- main -->
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-md-8 sm-py-3 ">
+         <div class="p-3 border bg-white">
+            <div class="">
+                <div class="row gx-5">
+                  <div class="col-12">
+                   <div class="official-color">{{form.business_singleLine}}
+                </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="">{{form.business_highlights}}.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- modal -->
+               <!-- Images Slider -->
+           
+
+              <div class="p-2">
+                  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                         
+                            {% for image in images %}
+                                {% if forloop.first %}
+                                  <div class="carousel-item active">
+                                {% else %}
+                                <div class="carousel-item">
+                                {% endif %}
+
+                                <img src="{{image}}" class="d-block w-100 h-50" class="h-50 d-inline-block" alt="...">
+                                  
+                                </div>
+                             {% endfor %}  
+                                                        
+                                                      
+                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    </div>
+
+
+                </div>
+               <!-- table -->
+               
+          <div class="table-responsive p-4">
+
+            <table class="table table-bordered bg-light">
+          
+              <tbody>
+                <tr>
+                    <td>Established</td>
+                  <td class="text-end">{{form.start_date}}
+                </td>
+                 
+                </tr>
+                <tr>
+                  <td>Employees</td>
+                  <td class="text-end">{{form.permanent_emp}}</td>
+                </tr>
+                <tr>
+                    <td>Legal Entity</td>
+                    <td class="text-end">{{form.investor_category}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Reported Sales
+                      <svg xmlns="http://www.w3.org/2000/svg"  class="opacity-50 " width="14" height="15" viewBox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+                    </td> </td>
+                    <td class="text-end">{{form.business_avgmonthsales}}</td>
+                  </tr>
+                  <tr>
+                    <td>Run Rate Sales
+                      <svg xmlns="http://www.w3.org/2000/svg"  class="opacity-50 " width="14" height="15" viewBox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+                    </td> </td>
+                    <td class="text-end">{{form.business_yearsales}}</td>
+                  </tr>
+                  <tr>
+                    <td>EBITDA Margin
+                      <svg xmlns="http://www.w3.org/2000/svg"  class="opacity-50 " width="14" height="15" viewBox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+                    </td> </td>
+                    <td class="text-end">{{form.business_opmpercent}}</td>
+                  </tr>
+                  <tr>
+                    <td>Industries</td>
+                    <td class="text-end">
+                        <a href="" class="text-decoration-none">{{form.interested_industry}}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Locations</td>
+                    <td class="text-end">
+                        <a href="" class="text-decoration-none" style="text-transform: uppercase" >{{form.interested_locations}}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Local Time</td>
+                    <td class="text-end">
+                       2
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Listed By</td>
+                    <td class="text-end">{{form.investor_category}}
+                    </td>
+                  </tr>
+                
+            
+              </tbody>
+            </table>
+            </div>
+        
+            <!-- table -->
+
+             
+                  <div class="col">
+                    <div class="px-3 ">
+                        <div class="">
+                            <div class="row gx-5">
+                              <div class="col-12">
+                               <div class="">Overall Rating</div>
+                              </div>
+                              <div class="col-12">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                                    
+                                      <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                                  <div class="text">
+                                      <a href="" class="text-decoration-none ">Compare with industry</a>
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                              <div class="py-2">
+                                <div class="row gx-5">
+                                  <div class="col-12 fw-bold">
+                                   <div class="" style="text-transform: uppercase">{{form.interested}}
+                                </div>
+                                  </div>
+                                  <div class="col-12 py-2">
+                                    <div class="">INR 10 lakh for 10.0% annual interest, 5 years (Native Currency: INR 1,000,000)
+                                        <div class="text">
+                                        Reason: Due to a deficiency of funds, the owner is seeking a loan to launch the idea into the market.
+                                        Collateral Available: INR 10 lakh</div>
+                                    </div>
+                                    <div class="checkbox py-2">
+                                        <input type="checkbox">
+                                        Includes physical assets worth INR 1.2 lakh
+                                    </div>
+                                    <div class="checkbox ">
+                                        <input type="checkbox">
+                                        Interested to connect with advisors
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="">
+                                <div class="row gx-5">
+                                  <div class="col-12 fw-bold">
+                                   <div class="">Name, Phone, Email</div>
+                                  </div>
+                                  <div class="col-12 py-1">
+                                    <div class=""> Available after connect
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="">
+                                <div class="row gx-5">
+                                  <div class="col-12 fw-bold">
+                                   <div class="">Business Name
+                                </div>
+                                  </div>
+                                  <div class="col-12 py-1">
+                                    <div class=""> Available after connect
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="">
+                                <div class="row gx-5">
+                                  <div class="col-12 fw-bold">
+                                   <div class="">User Verification
+                                </div>
+                                  </div>
+                                  <div class="col-12 py-1">
+                                    <div class="">   <div class="icons col-md-12">
+                                        <ul class="social-proof-list d-flex flex-row px-0 py-1 small-font">
+                                          <li class="icon-email list-unstyled px-1"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 512 512"><path d="M0 128C0 92.65 28.65 64 64 64H448C483.3 64 512 92.65 512 128V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V128zM48 128V150.1L220.5 291.7C241.1 308.7 270.9 308.7 291.5 291.7L464 150.1V127.1C464 119.2 456.8 111.1 448 111.1H64C55.16 111.1 48 119.2 48 127.1L48 128zM48 212.2V384C48 392.8 55.16 400 64 400H448C456.8 400 464 392.8 464 384V212.2L322 328.8C283.6 360.3 228.4 360.3 189.1 328.8L48 212.2z"/></svg><span class="px-1" id="icons1" >Official Email</span></li>
+                                          <li class="icon-linkedin-sign list-unstyled"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg><span class="px-1" id="icons1" >LinkedIn</span></li>
+                                          <li class="icon-phone list-unstyled px-1"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 512 512"><path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"/></svg><span class="px-1" id="icons1" >Phone</span></li>
+                                          <li class="icon-facebook-sign list-unstyled"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 448 512"><path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"/></svg><span class="px-1" id="icons1" >Facebook</span></li>
+                                          <li class="icon-google list-unstyled px-1"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM164 356c-55.3 0-100-44.7-100-100s44.7-100 100-100c27 0 49.5 9.8 67 26.2l-27.1 26.1c-7.4-7.1-20.3-15.4-39.8-15.4-34.1 0-61.9 28.2-61.9 63.2 0 34.9 27.8 63.2 61.9 63.2 39.6 0 54.4-28.5 56.8-43.1H164v-34.4h94.4c1 5 1.6 10.1 1.6 16.6 0 57.1-38.3 97.6-96 97.6zm220-81.8h-29v29h-29.2v-29h-29V245h29v-29H355v29h29v29.2z"/></svg><span class="px-1" id="icons1" >Google</span></li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="">
+                                    <div class="row gx-5">
+                                      <div class="col-12">
+                                       <div class="">Documents</div>
+                                      </div>
+                                      <div class="col-12 py-2">
+                                        <div class="">
+                                            <a href="" class="text-decoration-none">
+                                              <svg class="me-1 mb-1" width="12" height="13" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z" fill="gray"/></svg>  GST Certificate (180.4 KB)
+                                            </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="">
+                                    <div class="row gx-5">
+                                      <div class="col-12 fw-bold">
+                                       <div class="">Business Overview
+                                    </div>
+                                      </div>
+                                      <div class="col-12 py-2">
+                                        <div class="">
+                                            We aim to provide puzzle game zones, game shows, and other holistic development services to children.<br>
+
+                                                Our major customers are school children in Telangana & Andhra Pradesh states.<br>
+                                                
+                                                The business already has tie-ups with over 5 schools.<br>
+                                                
+                                                The expected growth rate of the business is around 15 - 20% per year.<br>
+                                                
+                                                The founder has over 3 years of experience in this industry.<br>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="">
+                                    <div class="row gx-5">
+                                      <div class="col-12 fw-bold">
+                                       <div class="">Products & Services Overview
+                                    </div>
+                                      </div>
+                                      <div class="col-12 py-2">
+                                        <div class="">We will provide services such as puzzles game zones, puzzles game shows, and puzzles books which can be subscribed to on a monthly basis.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="">
+                                    <div class="row gx-5">
+                                      <div class="col-12 fw-bold">
+                                       <div class="">Assets Overview
+                                    </div>
+                                      </div>
+                                      <div class="col-12 py-2">
+                                        <div class="">Physical assets include equipment related to the puzzles zone, system, and furniture.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="">
+                                    <div class="row gx-5">
+                                      <div class="col-12 fw-bold">
+                                       <div class="">Facilities Overview
+                                    </div>
+                                      </div>
+                                      <div class="col-12 py-2">
+                                        <div class="">We are looking to lease space of 2,500-3,000 sq ft on a rental base.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class=" ">
+                                    <div class="row ">
+                                      <div class="col-sm-12 col-md-12 ">
+                                       <div class="py-1 "><b>Tags:</b> Newly Established Dolls, Toys & Games Business Seeking Loan in Warangal, India · Lend to Newly Established Dolls, Toys & Games Business in Warangal, India 
+                                    </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                        
+                        
+                                  <div class="py-4">
+                                    <div class="row gx-5">
+                                      <div class="col ">
+                                       <div class=" disclaimer  py-2 border-top fw-light">Disclaimer: HUNTMENT is a regulated marketplace for connecting business sell sides with investors, buyers, lenders and advisors. Neither HUNTMENT represents nor guarantees that the information mentioned above is complete or correct. Note that HUNTMENT is not liable for any loss, damage, costs, claims and expenses whatsoever arising from transacting with any other user from the website. The final responsibility of conducting a thorough due diligence and taking the transaction forward lies with the users. Please read best practices on HUNTMENT.
+                                      </div>
+                                      </div>
+                                     
+                                    </div>
+                                  </div>
+
+
+
+
+
+                                </div>
+                              </div>
+
+
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+               
+        </div>
+        </div>
+        <div class="col-md-4 py-3">
+            <div class="  p-3 border text-center">
+               <!-- card 1 -->
+               <div class="card">
+                <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                    <div class="">
+                      <div class="row gx-5">
+                        <div class="col">
+                         <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                          <!-- <div class="py-1"> -->
+                            <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                        <!-- </div> -->
+                        </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                          
+                      
+                            <!-- <div class="p-1 "> -->
+                                <span class="opacity-50 small">location</span>
+                            
+                            <!-- </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="bg-light py-2 ">
+                      <div class="row  ">
+                        <div class="col">
+                         <div class="text-center">  
+                          <p >Run Rate Sales</p>
+                        </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-center"> 
+                          <p>INR 14 Crore</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="bg-light ">
+                      <div class="row  ">
+                        <div class="col">
+                         <div class="text-center">  
+                          <p >EBITDA Margin</p>
+                        </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-center"> 
+                          <p>35%</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class=" ">
+                      <div class="row ">
+                        <div class="col">
+                         <div class="py-1">
+                          <div class="opacity-50">Financial Investment </div>
+                          <div class="company-color fs-6 official-color">INR
+                              <span class="currency-text fs-5">24 Cr</span>
+                              <span class=" fs-6">for</span>
+    
+                              <span>86%</span>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col">
+                          <div class="py-3"> 
+                            <button type="button" class="btn btn-warning">Contact Business</button>
+    
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   <!-- <div class="d-flex justify-content-around">
+                    <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+                  </div> -->
+                  </div>
+                </div>
+
+         
+            <!-- card 1 end -->
+            
+                 <!-- card 2 -->
+
+        
+            <div class="card">
+              <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+                <div class="card-body">
+                  <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                  <div class="">
+                    <div class="row gx-5">
+                      <div class="col">
+                       <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                        <!-- <div class="py-1"> -->
+                          <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                      <!-- </div> -->
+                      </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                        
+                    
+                          <!-- <div class="p-1 "> -->
+                              <span class="opacity-50 small">location</span>
+                          
+                          <!-- </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-light py-2 ">
+                    <div class="row  ">
+                      <div class="col">
+                       <div class="text-center">  
+                        <p >Run Rate Sales</p>
+                      </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-center"> 
+                        <p>INR 14 Crore</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-light ">
+                    <div class="row  ">
+                      <div class="col">
+                       <div class="text-center">  
+                        <p >EBITDA Margin</p>
+                      </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-center"> 
+                        <p>35%</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class=" ">
+                    <div class="row ">
+                      <div class="col">
+                       <div class="py-1">
+                        <div class="opacity-50">Financial Investment </div>
+                        <div class="company-color fs-6 official-color">INR
+                            <span class="currency-text fs-5">24 Cr</span>
+                            <span class=" fs-6">for</span>
+  
+                            <span>86%</span>
+                        </div>
+                       </div>
+                      </div>
+                      <div class="col">
+                        <div class="py-3"> 
+                          <button type="button" class="btn btn-warning">Contact Business</button>
+  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 <!-- <div class="d-flex justify-content-around">
+                  <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+                </div> -->
+                </div>
+              </div>
+
+       
+          <!-- card 1 end -->
+          
+             
+            
+  
+  
+  
+  
+  
+              
+            </div>
+
+          
+        </div>
+
+      
+
+      </div>
+    </div>
+    <!-- main -->
+
+
+      
+<!--Deal swiper from here-->
+<section class="container-fluid alt_bg py-4 ">
+  <h3 class="text-center"></h3>
+  <section class="swiper_business_section container position-relative d-flex justify-content-center align-items-center">
+    <div class="swiper mySwiper1 container">
+      <div class="swiper-wrapper content">
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3 "> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+        <!-- card 2 -->
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3 "> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+        <!-- card 2 end -->
+        <!-- card 3 -->
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3 "> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+        <!-- card 3 end -->
+        <!-- card 4 -->
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3"> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+        <!-- card 4 end -->
+        <!-- card 5 -->
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3"> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+        <!-- card 5 end -->
+       
+        
+       
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3"> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3"> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+     
+        <div class="swiper-slide col-md-4 h-75 col-sm-12 mb-sm-4 bg-white my-4 ">
+          <div class="card">
+            <h6 class="text-center py-2 official-color">Machine Shop Investment Opportunity in</h6>
+              <div class="card-body">
+                <h6 class="card-title text-center">Manufacturing industrial products with 80% sales on B2B to the largest companies in Turkey. Details</h6>
+                <div class="">
+                  <div class="row gx-5">
+                    <div class="col">
+                     <div class="text-center">  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="orange"  viewBox="0 0 576 512"><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
+                      <!-- <div class="py-1"> -->
+                        <span class="rating-number">7.2 <span class="opacity-50 small"> / 10</span></span>
+                    <!-- </div> -->
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="35" fill="maroon" viewBox="0 0 384 512"><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+                      
+                  
+                        <!-- <div class="p-1 "> -->
+                            <span class="opacity-50 small">location</span>
+                        
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light py-2 ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >Run Rate Sales</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>INR 14 Crore</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-light ">
+                  <div class="row  ">
+                    <div class="col">
+                     <div class="text-center">  
+                      <p >EBITDA Margin</p>
+                    </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center"> 
+                      <p>35%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" ">
+                  <div class="row ">
+                    <div class="col">
+                     <div class="py-1">
+                      <div class="opacity-50">Financial Investment </div>
+                      <div class="company-color fs-6 official-color">INR
+                          <span class="currency-text fs-5">24 Cr</span>
+                          <span class=" fs-6">for</span>
+
+                          <span>86%</span>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="col">
+                      <div class="py-3"> 
+                        <button type="button" class="btn btn-warning">Contact Business</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!-- <div class="d-flex justify-content-around">
+                <a href="{% url 'in_progress' %}"  class="btn official_bg text-white">Know More</a>
+              </div> -->
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next swiper-button-next1 "></div>
+    <div class="swiper-button-prev swiper-button-prev1 "></div>
+    <div class="swiper-pagination swiper-pagination1 "></div>
+  </section>
+</section>
+<!--Deal swiper upto here-->
+
+
+
+
+    
+   {% block extra_js %} 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src='{% static "accounts/js/business/business for sale-customer.js" %}' async defer></script>
+
+   {% endblock %}
+{% endblock %}
+
+
+
+
+    
+
+
+   
+ <!--  </body>
+</html> -->

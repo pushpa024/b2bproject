@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+{% block extra_head_content %}
+<link rel="stylesheet" href='{% static "accounts/css/login.css" %}'>
+{% endblock %}
+
+   
+        <div class="container-fluid h-100">
+          <div class="row form_container min-vh-100 pt-5">
+          <div class="col col-sm-12 mt-md-4 px-2 pt-3 pb-2 pt-md-0 col-md-12 p-md-5">
+              <div class="col col-sm-12 px-2 col-md-5 px-md-5 py-4 py-md-1 mx-md-auto">
+                  <div class="card mb-3 px-5 pt-md-0 bg-opacity-75 shadow-lg">
+                        <div class="card-body pt-0">
+                          <div class="logo_container col-12 d-flex justify-content-center">
+                          <div class="login_form_logo  p-0 bg-opacity-75 bg-black rounded-circle">
+                              <a href="{% url 'home' %}" class="text-decoration-none">   <img src='{% static "accounts/images/logo-forms.png" %}' class="img-fluid w-100 h-auto"></a> 
+                          </div>
+                          </div>
+                        <!-- <div class="container mt-5"> -->
+                          <p>The payment is successful!</p>
+                          <p><a href="{% url 'home' %}">Home Page</a></p>
+                        <!-- </div> -->
+                        
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+                        
+  </div>                
+{% endblock %}

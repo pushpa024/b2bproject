@@ -1,0 +1,1300 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Huntment Home
+{% endblock %}
+{% block extra_head_content %}
+<link rel="stylesheet" href='{% static "accounts/css/businessform.css" %}'>
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script> -->
+    <!--jquery cdn-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!--Select2 js cdn here-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!--Intl-Phone-Input links-->
+    <script src="./intl-tel-input-master/build/js/intlTelInput.js"></script>
+    <link
+      type="text/html"
+      href="./intl-tel-input-master/build/css/intlTelInput.css"
+    />
+
+    <style>
+      input:invalid:required {
+        background-image: linear-gradient(to right, pink, lightgreen);
+      }
+      .link_color {
+        color: #1999ce !important;
+      }
+      .official_bg {
+        background-color: #1999ce;
+      }
+      .tooltip_text {
+        font-size: 12px;
+        border-bottom: 1px dotted;
+      }
+
+      .select2-selection--single {
+        min-height: 2.5rem;
+      }
+      .checked_input,
+      .checked_label {
+        opacity: 1 !important;
+      }
+      .sm_text {
+        font-size: 12px !important;
+      }
+      .xs_text {
+        font-size: 10px !important;
+      }
+      #brand_logo-preview img,
+      #facility_photos-preview img,
+      #brochure_doc-preview img,
+      #business_proof-preview img {
+        width: 60px;
+        height: 60px;
+      }
+      .huntment_border {
+        border: 1px solid #1999ce;
+      }
+      .tooltip_link {
+        font-size: 12px;
+        border-bottom: 1px dashed #1999ce;
+      }
+      #preview img {
+        width: 60px;
+        height: 60px;
+      }
+      #preview p {
+        color: red;
+      }
+       #resetbtn, #resetbtn1, #resetbtn2 {
+         display: none;
+         cursor: pointer !important;
+         z-index: 123456;
+       } 
+       #facility_photos-preview:hover ~ #resetbtn{
+         display: block;
+        }
+
+       #brochure_doc-preview:hover ~ #resetbtn1 {
+        display: block;
+      }
+      #business_proof-preview:hover ~ #resetbtn2 {
+        display: block;
+      }
+
+    </style>
+    <script src='{% static "accounts/js/businessform.js" %}' defer></script>
+
+    <script type="text/javascript">
+      function validateform(){
+        // alert("inside function")
+        var interested = document.myform.interested.value;
+        //alert(interested);
+        if(interested == null || interested == "-1"){
+          alert("Please select what you are interested in! Full Sale, Partial sale or Sell or Lease");
+          return false;
+        }
+      }
+    </script>
+    <script>
+       $(document).ready(function() {
+          $('#resetbtn').on('click', function() {
+              $('#facility_photos-preview').empty()
+            });
+            $('#resetbtn1').on('click', function() {
+              $('#brochure_doc-preview').empty()
+            });
+            $('#resetbtn2').on('click', function() {
+              $('#business_proof-preview').empty()
+            });
+            
+        });
+    </script>
+{% endblock %}
+{% block content %}
+  
+    <section class="container-fluid px-3 mt-0 py-4 bg-light">
+      <section class="py-4 px-3 bg-white shadow-sm mb-4">
+        <h6 class="link_color mb-3 mx-1">Your Profile Status</h6>
+        <div class="form-check form-switch my-2 ms-4">
+          <input
+            class="form-check-input checked_input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked"
+            disabled
+            checked
+          />
+          <label
+            class="form-check-label checked_label text-black small"
+            for="flexSwitchCheckChecked"
+            >Providing Details</label
+          >
+        </div>
+        <div class="form-check form-switch my-2 ms-4">
+          <input
+            class="form-check-input checked_input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDisabled"
+            disabled
+          />
+          <label
+            class="form-check-label checked_label text-black small"
+            for="flexSwitchCheckDisabled"
+            >Verification Call</label
+          >
+        </div>
+        <div class="form-check form-switch my-2 ms-4">
+          <input
+            class="form-check-input checked_input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDisabled"
+            disabled
+          />
+          <label
+            class="form-check-label checked_label text-black small"
+            for="flexSwitchCheckDisabled"
+            >Approved</label
+          >
+        </div>
+      </section>
+      <section class="px-3 bg-white">
+        <section class="row gx-5">
+          <h6 class="my-3 link_color">
+            Register Your Business Profile
+          </h6>
+          <section class="col-sm-12 col-lg-8">
+            <form action="{% url 'addbusinessprofile' %}" method="POST" name = "myform" id ="form_business" class="bg-white" enctype="multipart/form-data" onsubmit="return validateform()">
+              {% csrf_token %}
+
+             <div class="row mb-3 pb-3 pt-0 border">
+                <div class="col-12 official_bg text-white py-3 mb-3">
+                  <h6 class="mb-0">Confidential Information</h6>
+                  <p class="small mt-1 mb-0">
+                    Please enter your own details here. Information entered here
+                    is not publicly displayed.
+                  </p>
+                </div>
+                <div class="col-sm-12 mb-3 col-md-6">
+                  <label for="inputFname" class="form-label small"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="inputFname"
+                    id="inputFname"
+                  />
+                  <div class="nameFError small p-1 text-danger"></div>
+                </div>
+                <div class="col-sm-12 mb-3 col-md-6">
+                  <label for="companyName" class="form-label small"
+                    >Company Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="companyName"
+                    id="companyName"
+                  />
+                  <div class="companyNameError small p-1 text-danger"></div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label
+                    for="phone"
+                    class="form-label small col-12 d-block w-100"
+                    >Your Contact Number</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control d-block col-12 w-100"
+                    name="phone"
+                    id="phone"
+                  />
+                  <div class="phoneError small p-1 text-danger"></div>
+                </div>
+                <div class="col-sm-12 mb-3 col-md-6">
+                  <label
+                    for="inputEmail"
+                    class="form-label small col-12 d-block w-100"
+                    >Your Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control d-block col-12 w-100"
+                    name="inputEmail"
+                    id="inputEmail"
+                  />
+                  <div class="mailError small p-1 text-danger"></div>
+                </div>
+              </div>
+
+               <div class="row my-3 pb-4 border shadow-sm">
+                <div class="col-12 official_bg text-white py-3 mb-4">
+                  <h6 class="mb-0">Your Requirements</h6>
+                  <p class="small mb-0 mt-1">
+                    Information entered here will be publicly displayed to match
+                    you with the right set of businesses. Fields specifically
+                    marked as 'Private' will not be publicly displayed
+                  </p>
+                </div>
+
+                <div class="firsttwoinputs">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_category" class="form-label small">
+                        You are a(n)</label
+                      >
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 single_select"
+                        id="investor_category" 
+                        name="investor_category"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option value="-1" class="empty"></option>
+                        <option value="Business Owner / Director">
+                          Business Owner / Director
+                        </option>
+                        <option value="Management Member">
+                          Management Member
+                        </option>
+
+                        <option value="Advisor/Business Broker">
+                          Advisor/Business Broker
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!--  -->
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interested" class="form-label small">
+                        You are interested in</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 single_select"
+                        aria-label=".form-select-lg example "
+                        id="interested" name="interested"
+                        onchange="ShowHideDiv()" required
+                      >
+                        <option value="-1" class="empty"></option>
+                        <option value="fullSale">Full sale of business</option>
+                        <option value="partialBusiness">
+                          Partial stake sale of business/investment
+                        </option>
+
+                        <!-- <option value="loan">Loan for business</option> -->
+
+                        <option value="sellingLeasing">
+                          Selling or Leasing out Business Assets
+                        </option>
+                      </select>
+
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+
+                <div id="commonInput">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="user_category" class="form-label small">
+                        When was the business established?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 single_select"
+                        id="start-date" name="start_date"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option value="-1"></option>
+                        <option value="not yet operational">
+                          Not Yet Operational
+                        </option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        <option value="1989">1989</option>
+                        <option value="1988">1988</option>
+                        <option value="1987">1987</option>
+                        <option value="1986">1986</option>
+                        <option value="1985">1985</option>
+                        <option value="1984">1984</option>
+                        <option value="1983">1983</option>
+                        <option value="1982">1982</option>
+                        <option value="1981">1981</option>
+                        <option value="1980">1980</option>
+                        <option value="1979">1979</option>
+                        <option value="1978">1978</option>
+                        <option value="1977">1977</option>
+                        <option value="1976">1976</option>
+                        <option value="1975">1975</option>
+                        <option value="1974">1974</option>
+                        <option value="1973">1973</option>
+                        <option value="1972">1972</option>
+                        <option value="1971">1971</option>
+                        <option value="1970">1970</option>
+                        <option value="1969">1969</option>
+                        <option value="1968">1968</option>
+                        <option value="1967">1967</option>
+                        <option value="1966">1966</option>
+                        <option value="1965">1965</option>
+                        <option value="1964">1964</option>
+                        <option value="1963">1963</option>
+                        <option value="1962">1962</option>
+                        <option value="1961">1961</option>
+                        <option value="1960">1960</option>
+                        <option value="1959">1959</option>
+                        <option value="1958">1958</option>
+                        <option value="1957">1957</option>
+                        <option value="1956">1956</option>
+                        <option value="1955">1955</option>
+                        <option value="1954">1954</option>
+                        <option value="1953">1953</option>
+                        <option value="1952">1952</option>
+                        <option value="1951">1951</option>
+                        <option value="1950">1950</option>
+                        <option value="1949">1949</option>
+                        <option value="1948">1948</option>
+                        <option value="1947">1947</option>
+                        <option value="1946">1946</option>
+                        <option value="1945">1945</option>
+                        <option value="1944">1944</option>
+                        <option value="1943">1943</option>
+                        <option value="1942">1942</option>
+                        <option value="1941">1941</option>
+                        <option value="1940">1940</option>
+                        <option value="1939">1939</option>
+                        <option value="1938">1938</option>
+                        <option value="1937">1937</option>
+                        <option value="1936">1936</option>
+                        <option value="1935">1935</option>
+                        <option value="1934">1934</option>
+                        <option value="1933">1933</option>
+                        <option value="1932">1932</option>
+                        <option value="1931">1931</option>
+                        <option value="1930">1930</option>
+                        <option value="1929">1929</option>
+                        <option value="1928">1928</option>
+                        <option value="1927">1927</option>
+                        <option value="1926">1926</option>
+                        <option value="1925">1925</option>
+                        <option value="1924">1924</option>
+                        <option value="1923">1923</option>
+                        <option value="1922">1922</option>
+                        <option value="1921">1921</option>
+                        <option value="1920">1920</option>
+                        <option value="1919">1919</option>
+                        <option value="1918">1918</option>
+                        <option value="1917">1917</option>
+                        <option value="1916">1916</option>
+                        <option value="1915">1915</option>
+                        <option value="1914">1914</option>
+                        <option value="1913">1913</option>
+                        <option value="1912">1912</option>
+                        <option value="1911">1911</option>
+                        <option value="1910">1910</option>
+                        <option value="1909">1909</option>
+                        <option value="1908">1908</option>
+                        <option value="1907">1907</option>
+                        <option value="1906">1906</option>
+                        <option value="1905">1905</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!--  -->
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="interested_industry" class="form-label small">
+                        Select business' industry</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 multi_select"
+                        id="interested_industry" name="interested_industry"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option value="all">Select All Industries</option>
+                        <option value="apparel">Apparel</option>
+                        <option value="AI">Artificial Intelligence</option>
+                        <option value="building and construction">
+                          Building, COnstruction and Maintenance
+                        </option>
+                        <option value="business services">
+                          Business Services
+                        </option>
+                        <option value="coal">Coal</option>
+                        <option value="education">Education</option>
+                        <option value="electronic equipment">
+                          Electronic Equipment
+                        </option>
+                        <option value="energy">Energy</option>
+                        <option value="food & bevarage">Food & Bevarage</option>
+                        <option value="Freight & Logistics">
+                          Freight & Logistics
+                        </option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="IT">Information Technology</option>
+                        <option value="Integrated Oil & Gas">
+                          Integrated Oil & Gas
+                        </option>
+                        <option value="Logistics">Logistics</option>
+                        <option value="media">Media</option>
+                        <option value="Oil & Gas exploration">
+                          Oil & Gas Exploration / Production
+                        </option>
+                        <option value="retail shops">Retail Shops</option>
+                        <option value="Robotics">Robotics</option>
+                        <option value="textiles">Textiles</option>
+                        <option value="travel & leisure">
+                          Travel & Leisure
+                        </option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label
+                        for="interested_locations"
+                        class="form-label small"
+                      >
+                        Where is the business located ?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 multi_select"
+                        id="interested_locations" name="interested_locations"
+                        aria-label=".form-select-lg example"
+                      >
+                        <optgroup label="UAE">
+                          <option value="Abu Dhabi">Abu Dhabi</option>
+                          <option value="Ajman">Ajman</option>
+                          <option value="Dubai">Dubai</option>
+                          <option value="Fujairah">Fujairah</option>
+                          <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                          <option value="Sharjah">Sharjah</option>
+                        </optgroup>
+
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Umm Al-Quwain">Umm Al-Quwain</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        How many permanent employees does the business
+                        have?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="permanent_emp"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="franchise_industry" class="form-label small">
+                        Select business legal entity type</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 single_select"
+                        id="franchise_industry" name="franchise_industry"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option value="-1"></option>
+                        <option value="Sole Proprietorship/Solo Trader">
+                          Sole Proprietorship/Solo Trader
+                        </option>
+                        <option value="General Partnership">
+                          General Partnership
+                        </option>
+                        <option value="Limited Liability Partnership (LLP)">
+                          Limited Liability Partnership (LLP)
+                        </option>
+                        <option value="Limited Liability Company (LLC)">
+                          Limited Liability Company (LLC)
+                        </option>
+                        <option value="Private Limited Company">
+                          Private Limited Company
+                        </option>
+                        <option value="Public Limited Company">
+                          Public Limited Company
+                        </option>
+                        <option value="S Coporation">S Coporation</option>
+                        <option value="C Coporation">C Coporation</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="singleLine" class="form-label small"
+                        >Describe the business in a single line</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control" name="business_singleLine"
+                        id="singleLine"
+                        rows="3"
+                      ></textarea>
+                      <div class="singleLineError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="highlights" class="form-label small"
+                        >Mention highlights of the business including number of
+                        clients, growth rate, promoter experience, business
+                        relationships, awards, etc</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="highlights" name="business_highlights"
+                        rows="3"
+                      ></textarea>
+                      <div class="highlightsError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="ListAll" class="form-label small"
+                        >List all products and services of the business</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="ListAll" name="business_ListAll"
+                        rows="3"
+                      ></textarea>
+                      <div class="ListAllError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="facility" class="form-label small"
+                        >Describe your facility such as built-up area, number of
+                        floors, rental/lease details</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="facility" name="business_facility"
+                        rows="3"
+                      ></textarea>
+                      <div class="facilityError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        At present, what is your average monthly sales</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text" name="business_avgmonthsales"
+                              class="form-control"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What was your latest reported yearly sales?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text" name="business_yearsales"
+                              class="form-control"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        What is the EBITDA / Operating Profit Margin Percentage?
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="business_opmpercent"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="tangible" class="form-label small"
+                        >List all tangible and intangible assets the business
+                        owns</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="tangible" name="business_tangible"
+                        rows="3"
+                      ></textarea>
+                      <div class="tangibleError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What is the value of physical assets owned by the
+                        business that would be part of the transaction?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text" name="business_phyassets_value"
+                              class="form-control"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--common input end  -->
+                <!-- full dropdown 1  -->
+                <div id="dropdown1" style="display: none">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What is the tentative selling price for the
+                        business?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text" name="tentSP"
+                              class="form-control"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="reason" class="form-label small"
+                        >Provide reason for sale</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="reason" name="saleReason"
+                        rows="3"
+                      ></textarea>
+                      <div class="reasonError text-danger"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- full dropdown 1 end -->
+
+                <!--  dropdown 2  -->
+                <div id="dropdown2" style="display: none">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        What is the maximum stake you are willing to sell?
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="maxStakeSell"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What investment amount are you seeking for this
+                        stake?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text"
+                              class="form-control" name= "invAmtSeek"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="reason" class="form-label small"
+                        >Provide reason for investment</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="reason" name="investReason"
+                        rows="3"
+                      ></textarea>
+                      <div class="reasonError text-danger"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--  dropdown 2 end -->
+                <!--  dropdown 3  -->
+                <div id="dropdown3" style="display: none">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What is the value of collateral you can provide?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text"
+                              class="form-control"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What loan amount are you seeking?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text"
+                              class="form-control"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        What is the maximum yearly interest you can pay?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="location"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        In how many years will you repay the loan?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="location"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="reason" class="form-label small"
+                        >Reason for seeking a loan</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="reason"
+                        rows="3"
+                      ></textarea>
+                      <div class="reasonError text-danger"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+
+                <!--dropdown3 end  -->
+                <!-- dropdown 4 -->
+                <div id="dropdown4" style="display: none">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        When was this asset originally purchased?
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="sl_assetPurchaseDate"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        Select industries which can use this asset
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="sl_indUseAsset"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="inv_loc" class="form-label small">
+                        Where are the assets located?
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="sl_assetLocation"
+                        id="inv_loc"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="reason" class="form-label small"
+                        >What assets are you seeking to sell / lease? Write briefly about your business.</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="reason" name="sl_assetDetails"
+                        rows="3"
+                      ></textarea>
+                      <div class="reasonError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="reason" class="form-label small"
+                        >List all the tangible and intangible assets you are
+                        seeking to sell / lease. Mention features of the asset
+                        such as capacity, condition, built-up area, model make,
+                        size, etc</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="reason"
+                        name="sl_tanIntangible"
+                        rows="3"
+                      ></textarea>
+                      <div class="reasonError text-danger"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        What is the value of physical assets you are
+                        selling?</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text"
+                              class="form-control" name="sl_valuePhyAsset"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="investor_interests" class="form-label small">
+                        At what price are you selling / leasing?</label
+                      >
+                    </div>
+                    <div class="col-md-3 col-sm-6 py-2">
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group">
+                            <span class="input-group-text">INR</span>
+                            <input
+                              type="text"
+                              class="form-control" name="sl_sellAtPrice"
+                              aria-label="Amount (to the nearest dollar)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 py-2">
+                      <select
+                        class="form-select form-select-md mb-3 col-6 single_select"
+                        id="investor_category" name="sl_sellWay"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option value="Assets Sale">Assets Sale</option>
+                        <option value="Monthly rent">Monthly rent</option>
+
+                        <option value="Yearly Lease Amount">
+                          Yearly Lease Amount
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="reason" class="form-label small"
+                        >Reason for selling these business assets</label
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <textarea
+                        class="form-control"
+                        id="reason" name="sl_sellReason"
+                        rows="3"
+                      ></textarea>
+                      <div class="reasonError text-danger"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- dropdown4 end -->
+
+                <!-- photos and doc -->
+                <div class="uploads">
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="Facility_photos" class="form-label small">
+                        Add Photos of your Facility / Stores
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label
+                        for="facility_photos"
+                        class="btn rounded-1 bg-light col-7 border border-1 text-dark sm_text"
+                        >Add Photos</label
+                      >
+
+                      <input
+                        type="file"
+                        class="form-control"
+                        name="facility_photos"
+                        id="facility_photos"
+                        multiple
+                        accept=".jpg, .jpeg, .png"
+                        hidden
+                      />
+                      <div class="d-flex">
+                        <div id="facility_photos-preview" class="small p-1 text-danger"></div>
+                        <p id="resetbtn" style="position: relative; right: 1rem;">x</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="brochure_doc" class="form-label small"
+                        >Add Brochures & Document
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label
+                        for="brochure_doc"
+                        class="btn rounded-1 bg-light col-7 border border-1 text-dark sm_text"
+                        >Add Documents</label
+                      >
+                      <input
+                        type="file"
+                        class="form-control"
+                        name="brochure_doc"
+                        id="brochure_doc"
+                        multiple
+                        accept=".jpg, .jpeg, .png, .docx, .pdf, .xlsx"
+                        hidden
+                      />
+                      <div class="d-flex">
+                        <div id="brochure_doc-preview" class="small p-1 text-danger"></div>
+                         <p id="resetbtn1" style="position: relative; right: 1rem;">x</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="business_proof" class="form-label small"
+                        >Attach Proof of Business
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label
+                        for="business_proof"
+                        class="btn rounded-1 bg-light col-7 border border-1 text-dark sm_text"
+                        >Attach Proof</label
+                      >
+                      <input
+                        type="file"
+                        class="form-control"
+                        name="business_proof"
+                        id="business_proof"
+                        multiple
+                        accept=".jpg, .jpeg, .png, .docx, .pdf, .xlsx"
+                        hidden
+                      />
+                      <div class="d-flex">
+                        <div
+                        id="business_proof-preview"
+                        class="small p-1 text-danger"
+                      ></div>
+                      <p id="resetbtn2" style="position: relative; right: 1rem;" >x</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+
+                <div class="col-12 mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input checked_input"
+                      type="checkbox"
+                      value=""
+                      id="terms&conditions"
+                      checked
+                      disabled
+                    />
+                    <label
+                      class="form-check-label small checked_label"
+                      for="terms&conditions"
+                    >
+                      I accept the
+                      <a href="http://" class="text-decoration-none link_color">
+                        Terms of Engagement
+                      </a>
+                    </label>
+                  </div>
+                </div>
+              <div class="col-12 px-4">
+                  <div class="float-end pe-2 clearfix">
+                    <button type="submit" class="btn btn-md border-0 official_bg text-white">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              
+            </form>
+          </section>
+
+          <aside class="col-sm-12 col-lg-4 bg-lightpy-4">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item small">
+                <a href="http://" class="text-decoration-none link_color small">
+                  What is a Business Profile?
+                </a>
+              </li>
+              <li class="list-group-item small">
+                <a href="http://" class="text-decoration-none link_color small">
+                  Why should I disclose my business' name?</a
+                >
+              </li>
+              <li class="list-group-item small">
+                <a href="http://" class="text-decoration-none link_color small">
+                  Who can create a Business Profile?
+                </a>
+              </li>
+              <li class="list-group-item small">
+                <a href="http://" class="text-decoration-none link_color small">
+                  What is the minimum criteria to register on Huntment?
+                </a>
+              </li>
+              <li class="list-group-item small">
+                <a href="http://" class="text-decoration-none link_color small">
+                  I don’t want my Business details to be shown online. Can I use
+                  Huntment?
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </section>
+      </section>
+    </section>
+  {% endblock %}
+  {% block extra_js %} 
+
+{% endblock %}

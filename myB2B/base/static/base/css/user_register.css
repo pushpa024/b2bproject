@@ -1,0 +1,29 @@
+.register_form_logo {
+    height: 6rem;
+    width: 6rem;
+    top: -9%;
+    left: 40%;
+    z-index: 1;
+    border:  2px solid #1999ce;
+   
+}
+.form-control:focus {
+    border-color: transparent;
+    background-color: white !important;
+    color: black !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(17, 17, 17, 0.6);
+  }
+.border_huntment{
+    border-color: #1999ce !important;
+}
+@media 
+only screen and (max-width: 480px),
+(min-device-width: 200px) and (max-device-width: 480px)  {
+    .register_form_logo {
+        height: 6rem;
+        width: 6rem;
+        top: -8%;
+        left: 38%;
+        border:  2px solid #1999ce; 
+    }
+}

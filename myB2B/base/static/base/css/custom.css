@@ -1,0 +1,21 @@
+/* custom css here */
+:root{
+    --main-color: #1999ce;
+    font-family: 'Poppins', sans !important;
+    box-sizing: border-box !important;
+}
+.official_bg{
+    background-color: var(--main-color) !important;
+}
+.btn_bg{
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    height: 2.5rem;
+    
+}
+.link_color{
+    color: var(--main-color) !important;
+}

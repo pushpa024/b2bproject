@@ -1,0 +1,354 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+{% block extra_head_content %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href='{% static "base/css/how-to/value_busi.css" %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+{% endblock %}
+ <!--    <title>value a Business</title>
+  </head>
+  <body> -->
+    <div class="container py-4 ">
+        <div>
+        <h3 class="fw-bold">How to value a Business</h3>
+        </div>
+           
+          
+            <div class=" ">
+                <div class="row ">
+                  <div class="col-sm-12 col-md-12 ">
+                   <div class="py-1 fw-bold">What is Business Valuation?</div>
+                  </div>
+                  <div class="col-sm-12 col-md-12">
+                    <div class="py-1 "> 
+                        At SMERGERS, we define Business Valuation as a technique used to capture the true value of the business. Common approaches to business valuation include Discounted Cash Flow (DCF), Trading Comparables, and Transaction Comparables method described below.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" ">
+                <div class="row ">
+                  <div class="col-sm-12 col-md-12 ">
+                   <div class="py-1 fw-bold">When do you need a Business Valuation?
+                </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12">
+                    <div class=" "> 
+                        <p>The following are some of the common reasons which necessitate valuing your business</p>
+                        Selling the business<br>
+                        Fund raising from VC or IPO<br>
+                        Issuing stock to employees<br>
+                        Tax purposes<br>
+                        Liquidation of the company<br>
+                        Financial reporting related<br>
+                        Litigation related<br>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            
+                  
+            <div class=" ">
+                <div class="row ">
+                  <div class="col-sm-12 col-md-12 ">
+                   <div class="py-1 fw-bold">What is a Business’ value?</div>
+                  </div>
+                  <div class="col-sm-12 col-md-12">
+                    <div class="py-1 "> 
+                        A company is held by two categories of owners, shareholders and debt holders. The value of a pure business which accrues to both categories of owners is called the Enterprise Value, whereas the value which accrues just to shareholders is the Equity Value (also called market cap for listed companies). Companies are compared using the enterprise value instead of equity value as debt and cash levels may vary significantly even between companies in the same industry. During an acquisition, depending on whether it is an asset purchase or a stock purchase, valuation of appropriate elements of the business needs to be carried out.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" ">
+                <div class="row ">
+                  <div class="col-sm-12 col-md-12 ">
+                   <div class="py-1 fw-bold">What is the difference between an Asset purchase and Stock purchase</div>
+                  </div>
+
+                  <div class="table-responsive">
+
+                  <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th scope="col">Acquisiton Type</th>
+                          <th scope="col">Stock Purchase</th>
+                          <th scope="col">	Asset Purchase</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <th scope="row">Description</th>
+                          <td>Acquirer buys ownership/equity in the target company, including all of its assets and liabilities</td>
+                          <td>Acquirer purchases only selected assets of the target company and not liabilities to minimize the risk</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Payment</th>
+                          <td>Made directly to shareholders of the target company</td>
+                          <td>Made to the target company which in turn can be distributed to shareholders</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Taxes for seller</th>
+                          <td>Shareholders of the target company pay capital gains tax only	</td>
+                          <td>Target company will have to pay corporate tax. Shareholders will also pay dividend distribution tax if money is distributed resulting in double taxation</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Risks</th>
+                            <td>Acquirer assumes all risks and liabilities (including off balance sheet) of the target company	</td>
+                            <td>Acquirer chooses the assets and liabilities which he wants to assume
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Taxes for buyer	</th>
+                            <td>Assets and liabilities are continued to be carried and depreciated in the same manner as before the transaction. No tax advantage		</td>
+                            <td>Buyers allocate the purchase price among the assets to reflect their fair market value resulting in a step-up of tax basis. Allows higher depreciation and amortization deductions resulting in future tax savings
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Business Type	</th>
+                            <td>Only incorporated company acquisition can be structured either as a stock purchase or an asset purchase	</td>
+                            <td>Sole proprietorship, Partnership, Limited liability partnership (LLP) acquisition can be structured as an asset purchase only
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Preferred by	</th>
+                            <td>Sellers		</td>
+                            <td>Buyers/Acquirers
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  </div>
+
+                  <div class=" ">
+                    <div class="row ">
+                      <div class="col-sm-12 col-md-12 ">
+                       <div class="py-1 fw-bold">How to value my Business?</div>
+                       The three common approaches of valuing a company are described below:
+
+                      </div>
+
+                      <div class=" ">
+                        <div class="row px-4">
+                          <div class="col-sm-12 col-md-12 ">
+                           <div class="py-1 fw-bold">Discounted Cash Flow (DCF)
+                        </div>
+                          </div>
+                          <div class="col-sm-12 col-md-12">
+                            <div class="py-1 "> 
+                                It is widely believed that DCF is the best method to estimate the fair value of a company/business. As one would expect, the value of any company is the sum of the cash flows that it produces in the future, discounted to the present at an appropriate rate. The discount rate used is the appropriate Weighted Average Cost of Capital (WACC) that reflects the risk of the cash flows.
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     
+                      <div class=" ">
+                        <div class="row px-4">
+                          <div class="col-sm-12 col-md-12 ">
+                           <div class="py-1 fw-bold">Trading Comparables (trading comps)</div>
+                          </div>
+                          <div class="col-sm-12 col-md-12">
+                            <div class="py-1 "> 
+                                As per the Efficient Market Hypothesis at any given time, stock prices fully reflect all available information on a particular company and industry. Therefore trading companies provide the best estimate for valuing a similar company. Average multiples such as P/E, EV/EBITDA, EV/Sales, P/B, etc. are calculated from all companies similar to the one being valued and the same used to calculate its enterprise value. Use our free online valuation tool(below) to quickly estimate your company’s worth.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     
+                      <div class=" ">
+                        <div class="row px-4">
+                          <div class="col-sm-12 col-md-12 ">
+                           <div class="py-1 fw-bold">Transaction Comparables (transaction comps)</div>
+                          </div>
+                          <div class="col-sm-12 col-md-12">
+                            <div class="py-1 "> 
+                                Investment bankers widely use this method to value a company during an acquisition. Technically this method is similar to trading comps and uses multiples such as P/E, EV/EBITDA, EV/Sales, P/B, etc. But the comparables used are companies which have previously undergone a takeover, rather peers which trade on the stock market. Takeovers generally value the company higher because of a control premium paid by the acquirer.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class=" ">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-12 ">
+                       <div class="py-1 fw-bold">Online Business Valuation Tool
+                    </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                        <div class="py-1 "> 
+                            Our online valuation tool performs Trading Comparables method of valuation using data from thousands of listed firms in India and other emerging markets to provide a quick ball park valuation for your company within seconds. Private companies tend to have a lower valuation compared to public companies because of illiquidity and inherent riskiness with private companies. A discount factor of 20-30% is common to arrive at the valuation if the company being valued is small compared to an average listed firm in that space. Our customized valuation report provides details of all the comparable companies used along with multiples and their market cap. We also help you refine the valuation for your company by letting you choose comparable companies which best represent your business. For more detailed valuation report with all three methods – trading comparables, transaction comparables, and discounted cash flow valuation, contact us.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="container px-4">
+                    <div class="row gx-5">
+                      <div class="col">
+                       <div class="p-3 text-center fw-bold fs-2">How much is your business worth - Business Valuation Tool
+                    </div>
+                      </div>
+              
+                    </div>
+                  </div>
+
+                  <div class="container px-4">
+                    <div class="row gx-5">
+                      <div class="col">
+                       <div class="p-3">Both sides of an M&A deal will have different views on the worth of a company. Assigning a monetary value which is acceptable to both parties is as much art as it is science. However, there are many well accepted ways in which businesses can be valued which include<b> Discounted Cash Flow, Trading Comparables</b> and <b>Transaction Comparables.</b><br>
+
+                        Find out your company's worth using our online valuation tool. Select the sector your company operates in and enter basic financial details. We use publicly listed comparable companies to value your company. The graph shows the range and most optimal value of your company using different methods.
+                        <div class="form-group d-flex flex-column justify-content-between align-items-md-center align-items-lg-center align-items-xl-center flex-md-row flex-lg-row flex-xl-row mb-4 py-2">
+                            <label class="col-sm-12 col-md-6 col-lg-6 py-2 small">Select Country<br><span class="opacity-50 small">where your business operates in</span>
+                            </label>    
+                            <input type="search">
+                           </div>
+
+                           <div class="form-group d-flex flex-column justify-content-between align-items-md-center align-items-lg-center align-items-xl-center flex-md-row flex-lg-row flex-xl-row mb-4 py-2">
+                            <label class="col-sm-12 col-md-6 col-lg-6  small">Select Industry<br><span class="opacity-50 small">which represents your business</span>
+                            </label>            
+                            <input type="search">
+                           </div>
+
+                           <div class="form-group d-flex flex-column justify-content-between align-items-md-center align-items-lg-center align-items-xl-center flex-md-row flex-lg-row flex-xl-row mb-4 py-2">
+                            <label class="col-sm-12 col-md-6 col-lg-6  small">Annual Revenue
+                                <br><span class="opacity-50 small">Your company's latest Annual Revenue
+                                </span>
+                            </label>            
+                            <input type="search">
+                           </div>
+
+                           <div class="form-group d-flex flex-column justify-content-between align-items-md-center align-items-lg-center align-items-xl-center flex-md-row flex-lg-row flex-xl-row mb-4 py-2">
+                            <label class="col-sm-12 col-md-6 col-lg-6  small">EBITDA Margin 
+                                <br><span class="opacity-50 small">What is your company's EBITDA margin?
+                                </span>
+                            </label>            
+                            <input type="search">
+                           </div>
+
+                           <div class=" ">
+                            <div class="row ">
+                              <div class="col-sm-12 col-md-12 ">
+                               <div class="py-1 fw-bold">Need second opinion on Valuation?
+                            </div>
+                              </div>
+                              <div class="col-sm-12 col-md-12">
+                                <div class="py-1 "> 
+                                    The valuation tool provides a quick way to find your approximate business worth. For a detailed valuation including financial projections you can get SMERGERS assistance.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="d-grid  justify-content-md-end">
+                            <button class="btn btn-primary" type="button">Get Detailed Valuation</button>
+                          </div>
+
+                         
+                    </div>
+
+                    
+
+
+                  
+                      </div>
+                      
+                      <div class="col">
+                        <div class="p-3 border ">  <div class=" ">
+                          <div class="row ">
+                            <div class="col-sm-12 col-md-12 ">
+                             <div class="py-1 fw-bold">Source: 
+                          </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12">
+                              <div class="py-1 "> 
+                                  Investopedia, Aswath Damodaran
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row ">
+                            <div class="col-sm-12 col-md-12 ">
+                             <div class="py-1 fw-bold">Disclaimer:
+                          </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12">
+                              <div class="py-1 "> 
+                                The responsibility of further use of this information lies with the user, who has to be aware of the fact that the values calculated are the result of user provided data and calculation algorithms used by HUNTMENT.
+                              </div>
+                            </div>
+                          </div>
+
+                        </div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class=" ">
+                    <div class="row px-4">
+                      <div class="col-sm-12 col-md-12 ">
+                        <span class="opacity-50 small">NOTE:</span>
+                       <div class="py-1 fw-bold">EBITDA Multiple Method - [ EV/EBITDA Method ]
+                    </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                        <div class="py-1 "> 
+                            EV/EBITDA (EV:Enterprise Value; EBITDA:Earnings Before Interest, Taxes, Depreciation & Amortization) is the most widely used valuation multiple based on enterprise value to determine the fair market value of a company. EBITDA multiple is capital structure-neutral and can be used to directly compare companies with different levels of debt
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class=" ">
+                    <div class="row px-4">
+                      <div class="col-sm-12 col-md-12 ">
+                       <div class="py-1 fw-bold">Enterprise-Value-To-Sales Method - [ EV/Sales Method ]
+                    </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                        <div class="py-1 "> 
+                            EV/sales gives investors an idea of how much it costs to buy the company's sales. Generally the lower the EV/sales the more attractive or undervalued the company is believed to be. A high EV/Sales is not always a bad thing as it can be a sign that investors believe the future sales will greatly increase. A lower EV/sales can signal that the future sales prospects are not very attractive. It is important to compare the measure to that of other companies in the industry, and to look deeper into the company you are analyzing.
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                 
+
+                  
+    
+
+                 
+
+
+              
+                 
+                </div>
+              </div>
+
+
+
+    </div>
+
+{% block extra_js %}   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+{% endblock %}

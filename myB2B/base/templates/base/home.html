@@ -1,0 +1,113 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+Huntment Home
+{% endblock %}
+<!-- Main home page content starts here -->
+{% block extra_head_content %}
+<link rel="stylesheet" href='{% static "base/css/swiper.bundle.min.css" %}'>
+<link rel="stylesheet" href='{% static "base/css/home.css" %}'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid d-flex align-items-center flex-column top_sec py-4">
+  <h1 class="text-white pt-4 mt-2">Better <b>IDEAS</b></h1>
+  <h1 class="text-white">Better <b>INVESTMENT</b></h1>
+  <h1 class="text-white mb-4">Better <b>PROFIT</b></h1>
+  {% if not user.is_authenticated %}
+    <div
+      class="d-flex w-100 px-4 gap-4 align-items-center flex-column flex-md-row justify-content-center button_container">
+      <a type="button" href="{% url 'register-new' %}" class="btn border border-white text-white fw-bold home_buttons">Register</a>
+      <a type="button" href="{% url 'login-new' %}"  class="btn border border-white text-white fw-bold home_buttons">Login</a>
+    </div>
+   {% else %}
+      <div
+      class="d-flex w-100 px-8 gap-8 py-4 align-items-center flex-column flex-md-row justify-content-center button_container">
+      <div></div><br/>
+      <a type="button" href="{% url 'dashboard' %}" class="btn border border-white text-white fw-bold home_buttons">DashBoard  </a>
+      <!-- <a type="button" href="{% url 'logout' %}" class="btn border border-white text-white fw-bold home_buttons">Logout12</a> -->
+    </div> 
+    <!-- <div>
+      <a type="button" href="{% url 'delete' user.pk %}" class="btn border border-white text-white fw-bold home_buttons">>Delete</a></td>
+     
+    </div> -->
+   {% endif %} 
+</section>
+<section class="container  position-relative official_bg move_up min-vh-50 py-4">
+  <div class="row px-4">
+    <div
+      class="col-sm-12 col-xs-12 col-md-4 mb-4 mb-md-0 mb-lg-0 mb-xl-0  text-center d-flex flex-column justify-content-center  align-items-center">
+      <div class="col-md-6 img_div">
+        <img src='{% static "base/images/Business_profile_create.svg" %}' class="img-fluid"
+          alt="business profile image">
+      </div>
+      <p class="text-white mt-4">Business Sell / Funds For Business?</p>
+      <button class="border-0 outline-none p-2 rounded fw-bold"> <a href="{% url 'addbusinessprofile' %}"
+          class="text-decoration-none link_color">Create Business
+          Profile</a></button>
+    </div>
+    <div
+      class="col-sm-12 col-xs-12 col-md-4 mb-4 mt-2 mb-md-0 mb-lg-0 mb-xl-0 text-center d-flex flex-column justify-content-center align-items-center">
+      <div class=" col-md-6 img_div">
+        <img src='{% static "base/images/Franchiseprofilecreate.svg"%}' class="img-fluid">
+      </div>
+      <p class="text-white  mt-4">Franchise Buy or Sell?</p>
+      <!-- <button class="border-0 outline-none p-2 rounded fw-bold"> <a href="{% url 'franchiseprofile' %}"
+          class="text-decoration-none link_color">Create Franchise Profile</a></button> -->
+      <button class="border-0 outline-none p-2 rounded fw-bold"> <a href="{% url 'in_progress' %}"
+          class="text-decoration-none link_color">Create Franchise Profile</a></button>
+    </div>
+    <div
+      class="col-sm-12 col-xs-12 col-md-4 mb-4 mt-2 mb-md-0 mb-lg-0 mb-xl-0 text-center d-flex flex-column justify-content-center align-items-center">
+      <div class="col-md-6 img_div">
+        <img src='{% static "base/images/Investment.svg"%}' class="img-fluid">
+      </div>
+      <p class="text-white  mt-4">Investors, Advisor, Buyer or Lender?</p>
+      <!-- <button class="border-0 outline-none p-2 rounded fw-bold"> <a href="{% url 'investorbuyer' %}"
+          class="text-decoration-none link_color">Create Investor Profile</a></button> -->
+          <button class="border-0 outline-none p-2 rounded fw-bold"> <a href="{% url 'in_progress' %}"
+          class="text-decoration-none link_color">Create Investor Profile</a></button>
+    </div>
+  </div>
+</section>
+{% include "base/components/deal_swiper.html" %}
+{% include "base/components/business_swiper.html" %}
+
+
+{% include "base/components/investor_swiper.html" %}
+{% include "base/components/franchies_swiper.html" %}
+ 
+
+<section class="container-fluid min-vh-50 py-5">
+
+  <div class="container h-100 d-flex flex-column flex-md-row justify-content-center align-items-center">
+    <div class="col-sm-12 col-md-6 mt-5">
+     <h4 class="fw-bold">THOUSANDS OF BUSINESS OWNERS</h4>
+     <p class="p-0 m-0 fs-5">
+      Connect with Investors &
+      Advisors on </p>
+      <p class="fw-bold link_color fs-4 p-0 m-0">HUNTMENT</p>
+      <p class="p-0 m-0 fs-5">to Franchises
+        or Sell their Businesses.</p>
+     </p> 
+   </div>
+      <div class="col-sm-12 col-md-6  ms-md-0 mt-5">
+        <img src='{% static "base/images/handshake-homepage.svg"%}' class="w-100 h-auto img-fluid" alt="business man handshaking">
+      </div>
+   </div>
+     
+  </section>
+
+
+  {% include "base/components/testimonial.html" %}
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src='{% static "base/js/swiper.bundle.min.js" %}'></script>
+<script src='{% static "base/js/home.js" %}'></script>
+
+{% endblock %}
